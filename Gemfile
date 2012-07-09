@@ -34,6 +34,7 @@ gem 'jquery-rails'
 #
 group :development do
   gem 'guard'
+  gem 'guard-rspec'
   gem 'guard-livereload'
   gem 'rack-livereload'
   gem 'ruby_gntp'
