@@ -32,6 +32,15 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 #
+group :development do
+  gem 'guard'
+  gem 'guard-livereload'
+  gem 'rack-livereload'
+  gem 'ruby_gntp'
+
+  gem 'rails_best_practices'
+end
+
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
 end
