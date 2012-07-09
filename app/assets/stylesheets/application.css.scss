@@ -1,1 +1,20 @@
-@import  "compass/reset";
+@import "compass";
+@import "compass/reset";
+
+body {
+  > header {
+    max-width: 1120px;
+    min-width: 760px;
+    margin: 0 auto;
+    position: relative;
+    > nav {
+      position: absolute;
+      right: 0;
+      top: 20px;
+      
+      > ul {
+        @include horizontal-list;
+      }
+    }
+  }
+}
