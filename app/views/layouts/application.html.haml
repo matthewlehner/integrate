@@ -5,9 +5,15 @@
 
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
+    = yield :script
+
     = csrf_meta_tags
   %body
     %header
+      = link_to root_path do
+        %h1
+          Integrate
+          %small Arts Festival · August 4/5
       = render 'layouts/nav'
 
     %article

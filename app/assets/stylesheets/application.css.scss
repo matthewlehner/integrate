@@ -1,20 +1,64 @@
 @import "compass";
 @import "compass/reset";
+@import "variables";
+@import "bootstrap-carousel";
+@import 'static_pages';
 
 body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  font-size: 14px;
+
   > header {
     max-width: 1120px;
     min-width: 760px;
     margin: 0 auto;
     position: relative;
+    height: (78px + 60px);
+
+    > a > h1 {
+      text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      position: absolute;
+      top: 30px;
+      left: 40px;
+      background: image-url('logo.png') no-repeat;
+      width: 250px;
+      height: 78px;
+    }
+
     > nav {
       position: absolute;
-      right: 0;
-      top: 20px;
-      
+      right: 40px;
+      top: 70px;
+
       > ul {
         @include horizontal-list;
+        > li {
+          padding-right: 12px;
+
+          a {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #888;
+            @include transition-duration(0.2s);
+
+            &:hover {
+              color: #000;
+              @include text-shadow(0, 0, 4px, 4px, rgba(0, 0, 0, 0.3)); 
+            }
+          }
+        }
       }
     }
+  }
+
+  > article {
+    max-width: 1120px;
+    min-width: 760px;
+    margin: 0 auto;
+    position: relative;
+
   }
 }
