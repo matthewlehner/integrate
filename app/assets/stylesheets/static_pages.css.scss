@@ -1,0 +1,33 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.carousel {
+  width: 870px;
+  margin: 0 auto;
+  .item {
+    > .carousel-caption {
+      //padding: 20px;
+
+      h4 {
+        margin: auto auto 10px;
+        text-transform: uppercase;
+        font-size: 16px;
+
+        > small {
+          text-transform: none;
+          font-style: oblique;
+        }
+      }
+
+      h5 {
+        margin: auto auto 5px;
+        font-size: 16px;
+        color: $lightBlue;
+      }
+
+      p {
+      }
+    }
+  }
+}
