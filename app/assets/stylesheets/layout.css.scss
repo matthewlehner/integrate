@@ -2,6 +2,16 @@ body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
   font-size: 14px;
+  line-height: $baseLineHeight;
+
+  a {
+    color: $lightBlue;
+    text-decoration:none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 
   > header {
     max-width: 1120px;
@@ -58,8 +68,24 @@ body {
 
   > footer {
     background: $graySite;
-    > div {
-      display:inline-block;
+    > div.content {
+      margin:auto;
+      max-width: 1120px;
+      min-width: 760px;
+      display: block;
+      height: 80px;
+
+      > div {
+        display:block;
+        float:left;
+      }
+
+      ul {
+        @include horizontal-list;
+        li + li{
+          margin-right: 20px;
+        }
+      }
     }
   }
 }

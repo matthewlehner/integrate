@@ -1,0 +1,27 @@
+@import "icons/*.png";
+@include all-icons-sprites;
+
+[class^="icons-"], [class*=" icons-"] {
+  display: inline-block;
+  width: 15px;
+  height: 20px;
+}
+
+.right {
+  a {
+    background: $lightBlue;
+    @include border-radius(50%);
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    > i.icons-twitter{
+      margin-top: 7px;
+      margin-left: 10px;
+    }
+    > i.icons-facebook{
+      margin-top: 7px;
+      margin-left: 12px;
+    }
+  }
+}
+

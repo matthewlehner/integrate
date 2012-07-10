@@ -18,3 +18,21 @@
 
     %article
       = yield
+
+    %footer
+      .content
+        .left
+          © Integrate Arts Society
+
+        .mid
+
+        .right
+          %h3 Follow Us
+          %ul
+            %li
+              = link_to 'https://twitter.com/integrateartsoc', class: 'icons-twitter' do
+                %i.icons-twitter
+
+            %li
+              = link_to 'http://www.facebook.com/IntegrateArtSociety' do
+                %i.icons-facebook 

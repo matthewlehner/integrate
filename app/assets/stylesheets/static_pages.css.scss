@@ -37,12 +37,17 @@
   margin: 60px auto;
   vertical-align: bottom;
   .box {
+    > h2 {
+      text-transform: uppercase;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
     vertical-align:top;
     display: inline-block;
     background: $graySite;
-    width: 260px;
-    height: 260px;
-    padding: 15px;
+    width: 220px;
+    height: 220px;
+    padding: 35px;
 
     &:last-child {
       margin-left: 40px;
