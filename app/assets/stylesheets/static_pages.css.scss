@@ -31,3 +31,25 @@
     }
   }
 }
+
+.boxes {
+  width: 960px;
+  margin: 60px auto;
+  vertical-align: bottom;
+  .box {
+    vertical-align:top;
+    display: inline-block;
+    background: $graySite;
+    width: 260px;
+    height: 260px;
+    padding: 15px;
+
+    &:last-child {
+      margin-left: 40px;
+    }
+
+    &:first-child {
+      margin-right: 40px;
+    }
+  }
+}
