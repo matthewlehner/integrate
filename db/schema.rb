@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(:version => 20120711181027) do
     t.string   "phone"
     t.string   "email"
     t.string   "website"
+    t.text     "hours"
+    t.text     "festival_hours"
     t.text     "description"
     t.text     "exhibition_description"
     t.datetime "created_at",             :null => false
