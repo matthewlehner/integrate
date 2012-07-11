@@ -20,8 +20,6 @@ gem 'unicorn'
 # Deploy with Capistrano
 gem 'capistrano'
 
-# To use debugger
-# gem 'debugger'
 gem "dragonfly", "~> 0.9.12"
 gem "rack-cache", "~> 1.2", require: 'rack/cache'
 
