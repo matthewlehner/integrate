@@ -22,6 +22,8 @@ gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
+gem "dragonfly", "~> 0.9.12"
+gem "rack-cache", "~> 1.2", require: 'rack/cache'
 
 group :development do
   gem 'guard'
