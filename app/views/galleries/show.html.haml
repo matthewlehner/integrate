@@ -1,12 +1,16 @@
-%h1= @gallery.name
-= link_to url_with_protocol(@gallery.website) do
-  #{@gallery.address} • #{@gallery.website}
+- content_for :content_class, 'gallery'
+
+%header
+  %h1= @gallery.name
+  %p.lead
+    = link_to url_with_protocol(@gallery.website) do
+      #{@gallery.address} • #{@gallery.website}
 
 %h2 Exhibition
-= @gallery.exhibition_description
+%p= @gallery.exhibition_description
 
 %h2 About
-= @gallery.description
+%p= @gallery.description
 
 -# %h2 Additional Info
 -#   = link_to url_with_protocol(@gallery.website)

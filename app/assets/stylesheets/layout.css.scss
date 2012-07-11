@@ -8,6 +8,19 @@ body {
   h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     font-weight: 100;
+    color: $gray;
+  }
+
+  h1 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 4px;
+  }
+
+  h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 9px auto;
   }
 
   a {
