@@ -1,9 +1,12 @@
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
-  font-size: 14px;
   line-height: $baseLineHeight;
   color: $grayDarker;
+
+  p, ul, li {
+    font-size: $baseFontSize;
+  }
 
   h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
@@ -110,7 +113,7 @@ body {
       ul {
         @include horizontal-list;
         li + li {
-          margin-left: 20px;
+          margin-left: 10px;
         }
       }
     }
