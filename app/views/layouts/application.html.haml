@@ -16,7 +16,7 @@
           %small Arts Festival · August 4/5
       = render 'layouts/nav'
 
-    %article
+    %article{ class: (yield(:content_class) if yield(:content_class).present?) }
       = yield
 
     %footer
