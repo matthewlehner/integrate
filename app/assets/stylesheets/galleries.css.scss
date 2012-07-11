@@ -4,4 +4,30 @@
       margin-bottom: 12px;
     }
   }
+  > .exhibition {
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    > img {
+      width: 365px;
+      height: 270px;
+      float:left;
+    }
+
+    > .information {
+      margin-left: 365px;
+      padding: 0 80px 40px 40px;
+      > h2 {
+        margin-top: 0;
+      }
+    }
+  }
+
+  > .gallery-info {
+    padding: 0 40px;
+  }
+
+  p {
+    margin-bottom: 1.6 * $baseLineHeight;
+  }
 }

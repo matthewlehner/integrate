@@ -6,13 +6,19 @@
     = link_to url_with_protocol(@gallery.website) do
       #{@gallery.address} • #{@gallery.website}
 
-%h2 Exhibition
-%p= @gallery.exhibition_description
+.exhibition.group
+  = image_tag 'http://twitter.github.com/bootstrap/assets/img/bootstrap-mdo-sfmoma-01.jpg', size: '365x270'
 
-%h2 About
-%p= @gallery.description
+  .information
+    %h2 Exhibition
+    %p= @gallery.exhibition_description
 
--# %h2 Additional Info
--#   = link_to url_with_protocol(@gallery.website)
--#   = mail_to @gallery.email if @gallery.email.present?
--#   = link_to 
+.gallery-info
+  %h2 About
+  %p= @gallery.description
+
+  %h2 Additional Info
+  %ul
+    %li= link_to @gallery.website, url_with_protocol(@gallery.website)
+    %li= mail_to @gallery.email if @gallery.email.present?
+    %li= @gallery.phone if @gallery.phone.present?

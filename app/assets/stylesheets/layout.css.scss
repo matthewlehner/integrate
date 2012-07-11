@@ -15,15 +15,20 @@ body {
   }
 
   h1 {
-    font-size: 20px;
+    font-size: 22px;
     line-height: 28px;
-    margin-bottom: 4px;
+    margin: 9px auto;
   }
 
   h2 {
     font-size: 18px;
     line-height: 24px;
     margin: 9px auto;
+  }
+
+  h3 {
+    font-size: 16px;
+    line-height: 22px;
   }
 
   a {
@@ -40,6 +45,7 @@ body {
     max-width: 1120px;
     min-width: 760px;
     margin: 0 auto;
+    padding: 0 20px;
     position: relative;
     height: (78px + 60px);
 
@@ -49,7 +55,6 @@ body {
       overflow: hidden;
       position: absolute;
       top: 30px;
-      left: 40px;
       background: image-url('logo.png') no-repeat;
       width: 250px;
       height: 78px;
@@ -85,6 +90,7 @@ body {
     max-width: 1120px;
     min-width: 760px;
     margin: 0 auto;
+    padding: 20px;
     position: relative;
     overflow: hidden;
   }
