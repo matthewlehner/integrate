@@ -1,3 +1,3 @@
 class Gallery < ActiveRecord::Base
-  attr_accessible :address, :description, :email, :exhibition_description, :name, :phone, :website
+  attr_accessible :name, :address, :phone, :email, :website, :hours, :festival_hours, :description, :exhibition_description
 end

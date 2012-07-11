@@ -6,8 +6,10 @@ class CreateGalleries < ActiveRecord::Migration
       t.string :phone
       t.string :email
       t.string :website
-      t.text :description
-      t.text :exhibition_description
+      t.text   :hours
+      t.text   :festival_hours
+      t.text   :description
+      t.text   :exhibition_description
 
       t.timestamps
     end
