@@ -8,6 +8,6 @@ class MoveAddressToLocation < ActiveRecord::Migration
   end
 
   def down
-    add_column :galleries, :address
+    add_column :galleries, :address, :string
   end
 end
