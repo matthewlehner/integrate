@@ -23,6 +23,7 @@ gem 'capistrano'
 gem "dragonfly", "~> 0.9.12"
 gem "rack-cache", "~> 1.2", require: 'rack/cache'
 gem 'simple_form'
+gem 'geocoder'
 
 group :development do
   gem 'quiet_assets'
