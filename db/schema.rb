@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120711181027) do
+ActiveRecord::Schema.define(:version => 20120712192949) do
 
   create_table "galleries", :force => true do |t|
     t.string   "name"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(:version => 20120711181027) do
     t.string   "photo_uid"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
+  end
+
+  create_table "locations", :force => true do |t|
+    t.string   "address"
+    t.string   "city"
+    t.string   "postal_code"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end
