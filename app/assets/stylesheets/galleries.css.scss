@@ -1,9 +1,9 @@
-.gallery, .about {
+.gallery, .about, .locations {
   > .group {
     margin-top: 20px;
     margin-bottom: 40px;
 
-    > img {
+    > img, .locations {
       width: 365px;
       height: 270px;
       float:left;
