@@ -148,6 +148,15 @@ table {
   }
 
   td {
+    &.true {
+      background: #F3FFF3;
+    }
+
+    &.false {
+      background: #FDD;
+      font-weight: bold;
+    }
+
     &:first-child {
       padding-right: 40px;
     }
