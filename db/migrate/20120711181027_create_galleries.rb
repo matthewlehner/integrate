@@ -10,6 +10,7 @@ class CreateGalleries < ActiveRecord::Migration
       t.text   :festival_hours
       t.text   :description
       t.text   :exhibition_description
+      t.string :photo_uid
 
       t.timestamps
     end

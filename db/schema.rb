@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20120711181027) do
     t.text     "festival_hours"
     t.text     "description"
     t.text     "exhibition_description"
+    t.string   "photo_uid"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
   end
