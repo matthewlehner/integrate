@@ -6,4 +6,5 @@ class Gallery < ActiveRecord::Base
   image_accessor :photo
 
   default_scope order("LOWER(name)")
+  default_scope includes :location
 end
