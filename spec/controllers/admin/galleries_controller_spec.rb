@@ -14,15 +14,16 @@ describe Admin::GalleriesController do
   describe "GET 'new'" do
     it "returns http success" do
       get 'new'
-      assigns(:gallery).should eq(gallery)
+      assigns(:gallery).class.should eq(Gallery)
       response.should be_success
     end
   end
 
   describe "PUT 'create'" do
     it "returns http success" do
-      put 'create'
-      assigns(:gallery).should eq(gallery)
+      expect {
+        put 'create', gallery: FactoryGirl.attributes_for( :gallery )
+      }.to change(Gallery, :count).by(1)
       response.should redirect_to admin_galleries_url
     end
   end
