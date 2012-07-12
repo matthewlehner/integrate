@@ -12,4 +12,10 @@ describe Location do
   it 'checks for city' do
     Location.new.should have(1).error_on(:city)
   end
+
+  it 'responds to #full_street_address' do
+    location = FactoryGirl.create(:location)
+    location.full_street_address.should eq("#{location.address}, #{location.city}, BC, Canada, #{location.postal_code}")
+
+  end
 end
