@@ -7,7 +7,11 @@ class CreateLocations < ActiveRecord::Migration
       t.float :latitude
       t.float :longitude
 
+      t.references :addressable, polymorphic: true
+
       t.timestamps
     end
+
+    add_index :locations, [:addressable_id, :addressable_type]
   end
 end
