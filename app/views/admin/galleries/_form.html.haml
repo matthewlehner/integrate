@@ -22,20 +22,24 @@
 
   .field
     = f.label :hours
-    = f.text_area :hours
+    = f.text_area :hours, cols: '100', rows: '4'
 
   .field
     = f.label :festival_hours
-    = f.text_area :festival_hours
+    = f.text_area :festival_hours, cols: '100', rows: '4'
+
 
   .field
     = f.label :description
-    = f.text_area :description
+    = f.text_area :description, cols: '100', rows: '8'
+
 
   .field
     = f.label :exhibition_description
-    = f.text_area :exhibition_description
+    = f.text_area :exhibition_description, cols: '100', rows: '8'
 
-  = f.submit
-  or
-  = link_to 'cancel', admin_galleries_url
+
+  .actions
+    = f.submit
+    or
+    = link_to 'cancel', admin_galleries_url
