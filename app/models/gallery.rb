@@ -1,7 +1,7 @@
 class Gallery < ActiveRecord::Base
-  has_one :location, through: :addressable
+  has_one :location, as: :addressable
 
-  attr_accessible :name, :address, :phone, :email, :website, :hours, :festival_hours, :description, :exhibition_description, :photo
+  attr_accessible :name, :phone, :email, :website, :hours, :festival_hours, :description, :exhibition_description, :photo
 
   image_accessor :photo
 
