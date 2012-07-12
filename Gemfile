@@ -32,6 +32,7 @@ group :development do
   gem 'rack-livereload'
   gem 'ruby_gntp'
   gem 'rails_best_practices'
+  gem 'pry'
 end
 
 group :test, :development do
