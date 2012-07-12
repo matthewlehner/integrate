@@ -1,5 +1,7 @@
 Integrate::Application.routes.draw do
 
+  resources :map, controller: :locations, only: :index
+
   resources :galleries, only: [:index, :show]
 
   namespace :admin do
