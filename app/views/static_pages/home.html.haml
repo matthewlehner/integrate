@@ -50,7 +50,7 @@
 
   .box
     %h2 Map
-    %p 28 galleries, 8 installations, 10 bus stops & extra perks on this handy map.
+    %p #{pluralize @galleries.count, 'galleries'}, 8 installations & extra perks on this handy map.
     = link_to 'View Map', '#'
     |
     = link_to 'PDF', '#'
