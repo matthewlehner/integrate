@@ -1,46 +1,25 @@
-= form_for [:admin, @gallery], html: { multipart: true } do |f|
+= simple_form_for [:admin, @gallery], html: { multipart: true } do |f|
+  = f.error_notification
 
-  .field
-    = f.label :name
-    = f.text_field :name
+  = f.input :name
 
-  .field
-    = f.label :address
-    = f.text_field :address
+  = f.simple_fields_for :location do |l|
+    = l.input :address
+    = l.input :city, default: 'Victoria'
+    = l.input :postal_code
+    = l.input :latitude
+    = l.input :longitude
 
-  .field
-    = f.label :phone
-    = f.text_field :phone
-
-  .field
-    = f.label :email
-    = f.text_field :email
-
-  .field
-    = f.label :website
-    = f.text_field :website
-
-  .field
-    = f.label :hours
-    = f.text_area :hours, cols: '100', rows: '4'
-
-  .field
-    = f.label :festival_hours
-    = f.text_area :festival_hours, cols: '100', rows: '4'
-
-
-  .field
-    = f.label :description
-    = f.text_area :description, cols: '100', rows: '8'
-
-
-  .field
-    = f.label :exhibition_description
-    = f.text_area :exhibition_description, cols: '100', rows: '8'
-
-  .field
-    = f.label :photo
-    = f.file_field :photo
+  = f.input :phone
+  = f.input :email
+  = f.input :website
+  = f.input :hours, input_html: {cols: '100', rows: '4'}
+  = f.input :festival_hours, input_html: {cols: '100', rows: '4'}
+  = f.input :description, input_html: {cols: '100', rows: '4'}
+  = f.input :exhibition_description, input_html: {cols: '100', rows: '4'}
+  - if @gallery.photo
+    = image_tag @galler.photo.thumb('150x')
+  = f.input :photo, as: :file
 
   .actions
     = f.submit
