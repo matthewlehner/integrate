@@ -14,6 +14,7 @@ describe Admin::GalleriesController do
   describe "GET 'new'" do
     it "returns http success" do
       get 'new'
+      assigns(:gallery).should eq(gallery)
       response.should be_success
     end
   end
@@ -21,14 +22,16 @@ describe Admin::GalleriesController do
   describe "PUT 'create'" do
     it "returns http success" do
       put 'create'
-      response.should be_success
+      assigns(:gallery).should eq(gallery)
+      response.should redirect_to admin_galleries_url
     end
   end
 
   describe "GET 'edit'" do
     it "returns http success" do
       get :edit, id: gallery
-      response.should be_success
+      assigns(:gallery).should eq(gallery)
+      response.should render_template :edit
     end
   end
 
