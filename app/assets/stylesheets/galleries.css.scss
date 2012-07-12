@@ -1,11 +1,6 @@
-.gallery {
-  > header {
-    > .lead {
-      margin-bottom: 12px;
-    }
-  }
-  > .exhibition {
-    margin-top: 40px;
+.gallery, .about {
+  > .group {
+    margin-top: 20px;
     margin-bottom: 40px;
 
     > img {
@@ -14,7 +9,7 @@
       float:left;
     }
 
-    > .information {
+    > .details {
       margin-left: 365px;
       padding: 0 80px 40px 40px;
       > h2 {
@@ -23,11 +18,20 @@
     }
   }
 
-  > .gallery-info {
-    padding: 0 40px;
+  > .info {
+    width:960px;
+    margin:auto;
   }
 
   p {
     margin-bottom: 1.6 * $baseLineHeight;
+  }
+}
+
+.gallery {
+  > header {
+    > .lead {
+      margin-bottom: 12px;
+    }
   }
 }

@@ -9,7 +9,7 @@
 .exhibition.group
   = image_tag @gallery.photo_uid? ? @gallery.photo.thumb('365x270#').url : 'http://twitter.github.com/bootstrap/assets/img/bootstrap-mdo-sfmoma-01.jpg', size: '365x270'
 
-  .information
+  .details
     %h2 Exhibition
     %p= @gallery.exhibition_description
 
