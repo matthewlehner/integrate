@@ -24,6 +24,7 @@ gem "dragonfly", "~> 0.9.12"
 gem "rack-cache", "~> 1.2", require: 'rack/cache'
 
 group :development do
+  gem 'quiet_assets'
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-livereload'
