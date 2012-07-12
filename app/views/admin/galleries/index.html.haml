@@ -11,3 +11,5 @@
         %td
           = link_to 'edit', edit_admin_gallery_path(gallery)
           = link_to 'delete', admin_gallery_path(gallery), method: :delete, confirm: 'Are you sure you want to do this? Be careful! This is permanent and cannot be undone!'
+    %tr
+      %td{colspan: 2}= link_to 'Add new gallery', new_admin_gallery_path
