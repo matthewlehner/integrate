@@ -2,15 +2,22 @@
   %thead
     %tr
       %th Gallery
+      %th Geocoded?
       %th Actions
 
   %tbody
     - for gallery in @galleries
       %tr
         %td= gallery.name
+        - if gallery.location.geocoded?
+          %td.true 
+            yep - 
+            = link_to 'check map', gallery.location.map_link
+        - else
+          %td.false nope
         %td
           = link_to 'view', gallery
           = link_to 'edit', edit_admin_gallery_path(gallery)
           = link_to 'delete', admin_gallery_path(gallery), method: :delete, data: { confirm: 'Are you sure you want to do this? Be careful! This is permanent and cannot be undone!' }
     %tr
-      %td{colspan: 2}= link_to 'Add new gallery', new_admin_gallery_path
+      %td{colspan: 3}= link_to 'Add new gallery', new_admin_gallery_path
