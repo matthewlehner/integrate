@@ -32,10 +32,11 @@ describe Admin::GalleriesController do
     end
   end
 
-  describe "GET 'update'" do
+  describe "PUT 'update'" do
     it "returns http success" do
       put 'update', id: gallery
-      response.should be_success
+      assigns(:gallery).should eq(gallery)
+      response.should redirect_to admin_galleries_url
     end
   end
 
