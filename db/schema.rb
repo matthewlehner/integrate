@@ -34,8 +34,12 @@ ActiveRecord::Schema.define(:version => 20120712192949) do
     t.string   "postal_code"
     t.float    "latitude"
     t.float    "longitude"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "addressable_id"
+    t.string   "addressable_type"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
+
+  add_index "locations", ["addressable_id", "addressable_type"], :name => "index_locations_on_addressable_id_and_addressable_type"
 
 end
