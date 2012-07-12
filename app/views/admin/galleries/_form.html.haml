@@ -1,0 +1,41 @@
+= form_for [:admin, @gallery], multipart: true do |f|
+
+  .field
+    = f.label :name
+    = f.text_field :name
+
+  .field
+    = f.label :address
+    = f.text_field :address
+
+  .field
+    = f.label :phone
+    = f.text_field :phone
+
+  .field
+    = f.label :email
+    = f.text_field :email
+
+  .field
+    = f.label :website
+    = f.text_field :website
+
+  .field
+    = f.label :hours
+    = f.text_area :hours
+
+  .field
+    = f.label :festival_hours
+    = f.text_area :festival_hours
+
+  .field
+    = f.label :description
+    = f.text_area :description
+
+  .field
+    = f.label :exhibition_description
+    = f.text_area :exhibition_description
+
+  = f.submit
+  or
+  = link_to 'cancel', admin_galleries_url
