@@ -4,9 +4,12 @@ class Admin::GalleriesController < ApplicationController
   end
 
   def new
+    @gallery = Gallery.new
   end
 
   def create
+    @gallery = Gallery.create params[:gallery]
+    redirect_to admin_galleries_path
   end
 
   def edit
