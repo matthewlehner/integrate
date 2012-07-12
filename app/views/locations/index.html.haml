@@ -1,0 +1,14 @@
+- content_for :content_class, 'locations'
+
+:javascript
+  $( function () {
+    Integrate.loadMapScript();
+  });
+
+.group
+  .locations
+    %ul
+      -for location in @locations
+        %li= location.addressable.name
+
+  #map_canvas
