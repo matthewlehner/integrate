@@ -6,9 +6,13 @@ class Location < ActiveRecord::Base
   validates_presence_of :address, :city, on: :create
 
   geocoded_by :full_street_address
-  after_validation :geocode, on: :create
+  after_validation :geocode, unless: :geocoded?
 
   def full_street_address
     [address, city, 'BC', 'Canada', postal_code].compact.join(', ')
+  end
+
+  def map_link
+    "http://maps.google.com/maps?q=#{self.full_street_address}"
   end
 end
