@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :gallery do
     name        'Art Gallery'
-    address     '630 Yates Street, Victoria, BC, V8W 1L2'
     email       'cr@uvic.ca'
     phone       '250.721.6562'
     website     'www.legacygallery.ca'
