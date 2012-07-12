@@ -37,10 +37,16 @@ describe Admin::GalleriesController do
   end
 
   describe "PUT 'update'" do
-    it "returns http success" do
+    it "finds the requested gallery" do
       put 'update', id: gallery
       assigns(:gallery).should eq(gallery)
-      response.should redirect_to admin_galleries_url
+    end
+
+    it "updates the gallery's attributes" do
+      put 'update', id: gallery, gallery: FactoryGirl.attributes_for( :gallery, name: 'Freedom Cafe')
+      gallery.reload
+      gallery.name.should eq('Freedom Cafe')
+      response.should redirect_to admin_galleries_path
     end
   end
 
