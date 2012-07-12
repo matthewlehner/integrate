@@ -6,7 +6,7 @@
         = link_to gallery do
           .carousel-caption
             %h4= gallery.name
-            %h5= gallery.address
+            %h5= gallery.location.address
             %p= truncate gallery.exhibition_description, length: 90, separator: ' '
 
 
