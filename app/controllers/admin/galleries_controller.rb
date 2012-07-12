@@ -18,7 +18,7 @@ class Admin::GalleriesController < ApplicationController
 
   def update
     @gallery = Gallery.find params[:id]
-    if @gallery.save
+    if @gallery.update_attributes(params[:gallery])
       redirect_to admin_galleries_path
     else
       render action: :edit
