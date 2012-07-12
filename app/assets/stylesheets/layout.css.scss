@@ -135,3 +135,34 @@ body {
 .group:after {
   clear: both;
 }
+
+table {
+  td, th {
+    padding: 7px;
+  }
+
+  th {
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  td {
+    &:first-child {
+      padding-right: 40px;
+    }
+
+    > a:first-child {
+      margin-right: 15px;
+    }
+  }
+
+  tbody {
+    tr {
+      border-top: 1px solid whitesmoke;
+
+      &:hover {
+        background: $grayLighter;
+      }
+    }
+  }
+}
