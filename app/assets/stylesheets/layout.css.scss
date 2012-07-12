@@ -75,10 +75,11 @@ body {
             text-decoration: none;
             color: #888;
             @include transition-duration(0.2s);
+            @include transition-property('color');
 
             &:hover {
               color: #000;
-              @include text-shadow(0, 0, 4px, 4px, rgba(0, 0, 0, 0.3));
+              text-decoration:none;
             }
           }
         }

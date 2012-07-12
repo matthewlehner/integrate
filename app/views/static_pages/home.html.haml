@@ -1,41 +1,14 @@
-- content_for :script do
-  :javascript
-    $( function() {
-      $('.carousel').carousel()
-    });
-
 #galleryCarousel.carousel.slide
   .carousel-inner
-    .active.item
-      = image_tag 'http://twitter.github.com/bootstrap/assets/img/bootstrap-mdo-sfmoma-01.jpg'
-      .carousel-caption
-        %h4
-          'New Works'
-          %small by
-          Vincent Van Gogh
-        %h5 The 50/50 • 2516 Douglas St.
-        %p Van Gogh began to draw as a child, and he continued to draw throughout the years that led up to his decision to become an artist.
+    - for gallery in @galleries
+      .item
+        = image_tag gallery.photo ? gallery.photo.thumb('640x400#').url : 'logo.png', size: '640x400'
+        = link_to gallery do
+          .carousel-caption
+            %h4= gallery.name
+            %h5= gallery.address
+            %p= truncate gallery.exhibition_description, length: 90, separator: ' '
 
-    .item
-      = image_tag "http://twitter.github.com/bootstrap/assets/img/bootstrap-mdo-sfmoma-02.jpg"
-      .carousel-caption
-      .carousel-caption
-        %h4
-          'New Works'
-          %small by
-          Vincent Van Gogh
-        %h5 The 50/50 • 2516 Douglas St.
-        %p Van Gogh began to draw as a child, and he continued to draw throughout the years that led up to his decision to become an artist.
-
-    .item
-      = image_tag "http://twitter.github.com/bootstrap/assets/img/bootstrap-mdo-sfmoma-03.jpg"
-      .carousel-caption
-        %h4
-          'New Works'
-          %small by
-          Vincent Van Gogh
-        %h5 The 50/50 • 2516 Douglas St.
-        %p Van Gogh began to draw as a child, and he continued to draw throughout the years that led up to his decision to become an artist.
 
   %a.carousel-control.left{ href: "#galleryCarousel", data: {slide: "prev"} }
     &lsaquo;
@@ -59,4 +32,9 @@
     %h2 Buses
     %p Victoria's 5th annual Integrate Art Crawl will be taking place from 6: pm to 10:00 pm on August 4th. This open house event brings together Victoria's art galleries, artist-run centers, and community at large. Attendees have the opportunity to explore the city's art exibitions ...
     = link_to 'Read More', about_path
+
+:javascript
+  $( function() {
+    Integrate.startCarousel('.carousel')
+  });
 
