@@ -151,8 +151,12 @@ table {
       padding-right: 40px;
     }
 
-    > a:first-child {
+    > a {
       margin-right: 15px;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 
