@@ -4,3 +4,52 @@
 #map_canvas {
   height:600px;
 }
+
+.map {
+  padding-top: 0;
+
+  > .group {
+    margin-top: 0;
+  }
+
+  .locations {
+    width: 365px;
+    float: left;
+
+    > h2 {
+      padding: 5px;
+      border:1px solid $grayLighter;
+      margin:0 5px;
+
+      &:first-child {
+        margin:0 5px;
+        @include border-top-radius(4px);
+      }
+
+      &:last-child {
+        margin: 0 5px 5px 5px;
+        @include border-bottom-radius(4px);
+      }
+
+    }
+
+    > ul {
+      margin: 0 5px;
+      border: 1px solid $grayLighter;
+      border-top: none;
+
+      > li {
+        padding: 5px 0 5px 15px;
+        cursor: pointer;
+
+        &:hover {
+          background: transparentize($lightBlue, .75);
+        }
+      }
+
+      + h2 {
+        border-top:none;
+      }
+    }
+  }
+}

@@ -127,14 +127,12 @@ body {
   }
 }
 
-.group:before,
 .group:after {
-  display: table;
+  visibility: hidden;
+  display: block;
   content: "";
-}
-
-.group:after {
   clear: both;
+  height: 0;
 }
 
 table {
