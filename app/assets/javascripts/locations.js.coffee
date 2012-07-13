@@ -2,7 +2,7 @@ class window.Integrate.Map
   @loadMapScript: (callback) ->
     script = document.createElement("script");
     script.type = "text/javascript";
-    script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=#{callback}";
+    script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyB9IdLhQglAYjiq0njxlKZSYGGtZu7QVpU&sensor=false&callback=#{callback}";
     document.body.appendChild(script);
 
   constructor: (sites) ->
