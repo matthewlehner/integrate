@@ -2,8 +2,10 @@
 
 :javascript
   var mapsLoaded = function() {
-    window.map = new Integrate.Map;
+    var sites = #{@locations.as_json(only: [:id, :name, :latitude, :longitude]).to_json};
+    window.map = new Integrate.Map(sites);
   }
+
 
   $( function () {
     Integrate.Map.loadMapScript('mapsLoaded');
@@ -13,6 +15,9 @@
   .locations
     %ul
       -for location in @locations
-        %li= location.addressable.name
+        - begin
+          %li= location.addressable.name
+        - rescue
+          %li #{location.id} - PROBLEM
 
   #map_canvas
