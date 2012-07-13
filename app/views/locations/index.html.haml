@@ -15,9 +15,6 @@
   .locations
     %ul
       -for location in @locations
-        - begin
-          %li= location.addressable.name
-        - rescue
-          %li #{location.id} - PROBLEM
+        %li{ data: {location_id: location.id}}= location.addressable.name
 
   #map_canvas
