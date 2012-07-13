@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+require 'gallery'
+require 'location'
 require 'csv'
 
 CSV.foreach ::Rails.root + 'lib/galleries.csv', headers: true do |g|

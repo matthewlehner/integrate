@@ -1,3 +1,6 @@
+require 'gallery'
+require 'location'
+
 class MoveAddressToLocation < ActiveRecord::Migration
   def up
     Gallery.find_each do |g|
