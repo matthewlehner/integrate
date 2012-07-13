@@ -1,6 +1,8 @@
 class Location < ActiveRecord::Base
   belongs_to :addressable, polymorphic: true, dependent: :destroy
 
+  delegate :name, to: :addressable, allow_nil: true
+
   attr_accessible :address, :city, :postal_code, :latitude, :longitude
 
   validates_presence_of :address, :city, on: :create
