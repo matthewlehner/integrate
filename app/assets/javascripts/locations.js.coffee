@@ -12,14 +12,13 @@ class window.Integrate.Map
   initializeMap: ->
     myOptions =
       zoom: 14
-      center: new google.maps.LatLng(48.7764830, -123.26177780)
+      center: new google.maps.LatLng(48.43516805377862, -123.34845250000001)
       mapTypeId: google.maps.MapTypeId.ROADMAP
 
     @map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
   addMarkers: (sites) ->
     @createMarker site for site in sites
-    @setBounds()
 
   createMarker: (site) ->
     latLng = new google.maps.LatLng(site['latitude'], site['longitude'])
@@ -34,5 +33,7 @@ class window.Integrate.Map
     infowindow = new google.maps.InfoWindow
       content: site['name']
 
-    google.maps.event.addListener marker, 'click', ->
+    google.maps.event.addListener marker, 'click', =>
+      @infoWindow?.close()
+      @infoWindow = infowindow
       infowindow.open @map, marker
