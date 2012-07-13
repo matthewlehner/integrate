@@ -18,7 +18,11 @@ class window.Integrate.Map
     @map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
   addMarkers: (sites) ->
+    @markers = {}
     @createMarker site for site in sites
+    $('[data-location_id]').on 'click', ->
+      marker = $(this).data('marker')
+      google.maps.event.trigger marker, 'click' 
 
   createMarker: (site) ->
     latLng = new google.maps.LatLng(site['latitude'], site['longitude'])
@@ -26,8 +30,11 @@ class window.Integrate.Map
       position: latLng
       map: @map
       title: site['name']
+      animation: google.maps.Animation.DROP
 
+    @markers[site['id']] = marker
     @createInfoWindow(site, marker)
+    @linkToEl(site['id'])
 
   createInfoWindow: (site, marker) ->
     infowindow = new google.maps.InfoWindow
@@ -37,3 +44,6 @@ class window.Integrate.Map
       @infoWindow?.close()
       @infoWindow = infowindow
       infowindow.open @map, marker
+
+  linkToEl: (id) ->
+    $("[data-location_id=#{id}]").data('marker', @markers[id])
