@@ -1,8 +1,12 @@
 - content_for :content_class, 'locations'
 
 :javascript
+  var mapsLoaded = function() {
+    window.map = new Integrate.Map;
+  }
+
   $( function () {
-    Integrate.loadMapScript();
+    Integrate.Map.loadMapScript('mapsLoaded');
   });
 
 .group
