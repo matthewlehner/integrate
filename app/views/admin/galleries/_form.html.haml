@@ -18,7 +18,7 @@
   = f.input :description, input_html: {cols: '100', rows: '4'}
   = f.input :exhibition_description, input_html: {cols: '100', rows: '4'}
   - if @gallery.photo
-    = image_tag @galler.photo.thumb('150x')
+    = image_tag @gallery.photo.thumb('150x')
   = f.input :photo, as: :file
 
   .actions
