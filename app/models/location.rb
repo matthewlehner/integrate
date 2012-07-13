@@ -1,5 +1,5 @@
 class Location < ActiveRecord::Base
-  belongs_to :addressable, polymorphic: true
+  belongs_to :addressable, polymorphic: true, dependent: :destroy
 
   attr_accessible :address, :city, :postal_code, :latitude, :longitude
 
