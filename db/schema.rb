@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120712200845) do
+ActiveRecord::Schema.define(:version => 20120713230110) do
 
   create_table "galleries", :force => true do |t|
     t.string   "name"
@@ -40,5 +40,13 @@ ActiveRecord::Schema.define(:version => 20120712200845) do
   end
 
   add_index "locations", ["addressable_id", "addressable_type"], :name => "index_locations_on_addressable_id_and_addressable_type"
+
+  create_table "offsites", :force => true do |t|
+    t.string   "name"
+    t.text     "details"
+    t.datetime "schedule"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end
