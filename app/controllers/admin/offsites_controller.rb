@@ -1,6 +1,6 @@
 class Admin::OffsitesController < ApplicationController
   def index
-    @offsites = Offsite.all
+    @offsites = Offsite.scoped
   end
 
   def show
@@ -16,10 +16,10 @@ class Admin::OffsitesController < ApplicationController
   end
 
   def create
-    @offsite = Offsite.new(params[:admin_offsite])
+    @offsite = Offsite.new(params[:offsite])
 
     if @offsite.save
-      redirect_to @offsite, notice: 'Offsite was successfully created.'
+      redirect_to admin_offsites_url, notice: 'Offsite was successfully created.'
     else
       render action: "new"
     end
