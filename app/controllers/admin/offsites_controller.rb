@@ -9,6 +9,7 @@ class Admin::OffsitesController < ApplicationController
 
   def new
     @offsite = Offsite.new
+    @offsite.build_location
   end
 
   def edit
