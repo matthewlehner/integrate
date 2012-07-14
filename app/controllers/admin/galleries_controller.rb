@@ -5,6 +5,7 @@ class Admin::GalleriesController < ApplicationController
 
   def new
     @gallery = Gallery.new
+    @gallery.build_location
   end
 
   def create
