@@ -32,14 +32,13 @@
     %h2.galleries Galleries
     %ul.galleries.active
       -for location in @locations.sort_by(&:name)
-        %li{ data: {location_id: location.id}}= location.addressable.name
+        - if location.addressable_type == 'Gallery'
+          %li{ data: {location_id: location.id}}= location.name
 
-    %h2.off-sites Off-Sites
+    %h2.off-sites Off Site Events
     %ul.off-sites
-      %li Placeholder #1.
-      %li Placeholder #2.
-      %li Placeholder #3.
-      %li Placeholder #3.
-      %li Placeholder #3.
+      -for location in @locations.sort_by(&:name)
+        - if location.addressable_type == 'Offsite'
+          %li{ data: {location_id: location.id}}= location.name
 
   #map_canvas
