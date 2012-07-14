@@ -1,0 +1,19 @@
+= simple_form_for [:admin, @offsite] do |f|
+  = f.error_notification
+
+  = f.input :name
+
+  = f.simple_fields_for :location do |l|
+    = l.input :address
+    = l.input :city, default: 'Victoria'
+    = l.input :postal_code
+    = l.input :latitude
+    = l.input :longitude
+  
+  = f.input :schedule
+  = f.input :details, input_html: {cols: '100', rows: '4'}
+
+  .actions
+    = f.button :submit
+    or
+    = link_to 'cancel', admin_offsites_path

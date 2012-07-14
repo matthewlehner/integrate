@@ -1,0 +1,19 @@
+%h1 Listing offsites
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @offsites.each do |offsite|
+      %tr
+        %td= link_to 'Show', admin_offsite_path(offsite)
+        %td= link_to 'Edit', edit_admin_offsite_path(offsite)
+        %td= link_to 'Destroy', admin_offsite_path(offsite), :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Offsite', new_admin_offsite_path
