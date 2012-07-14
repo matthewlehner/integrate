@@ -7,4 +7,8 @@ describe Gallery do
   context 'has a picture' do
     it { should respond_to(:photo) }
   end
+
+  it 'checks for name' do
+    Gallery.new.should have(1).error_on(:name)
+  end
 end

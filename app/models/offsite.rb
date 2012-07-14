@@ -3,4 +3,6 @@ class Offsite < ActiveRecord::Base
   accepts_nested_attributes_for :location
 
   attr_accessible :details, :name, :schedule, :location_attributes
+
+  validates_presence_of :name
 end
