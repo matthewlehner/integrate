@@ -6,7 +6,7 @@ Integrate::Application.routes.draw do
 
   namespace :admin do
     resources :galleries, except: :show
-    resources :offsites
+    resources :offsites, except: :show
   end
 
   get 'about', to: 'static_pages#about', as: 'about'
