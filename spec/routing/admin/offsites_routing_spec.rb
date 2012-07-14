@@ -11,10 +11,6 @@ describe Admin::OffsitesController do
       get("/admin/offsites/new").should route_to("admin/offsites#new")
     end
 
-    it "routes to #show" do
-      get("/admin/offsites/1").should route_to("admin/offsites#show", :id => "1")
-    end
-
     it "routes to #edit" do
       get("/admin/offsites/1/edit").should route_to("admin/offsites#edit", :id => "1")
     end
