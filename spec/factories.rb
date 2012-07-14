@@ -13,4 +13,10 @@ FactoryGirl.define do
     city        'Victoria'
     postal_code 'V8W 1L2'
   end
+
+  factory :offsite do
+    name      'offsite event'
+    schedule  Time.zone.now
+    details   "This is what's gonna go down."
+  end
 end
