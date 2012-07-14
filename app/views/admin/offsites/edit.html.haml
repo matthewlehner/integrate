@@ -1,7 +1,3 @@
-%h1 Editing admin_offsite
+%h1= @offsite.name
 
 = render 'form'
-
-= link_to 'Show', @admin_offsite
-\|
-= link_to 'Back', admin_offsites_path
