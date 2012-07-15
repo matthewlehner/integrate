@@ -19,4 +19,10 @@ FactoryGirl.define do
     schedule  Time.zone.now
     details   "This is what's gonna go down."
   end
+
+  factory :sponsor do
+    name        'print maker town'
+    description 'wild'
+    logo        Rails.root.join('spec/support/files/cfuv.png')
+  end
 end
