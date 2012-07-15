@@ -1,5 +1,5 @@
 class SponsorsController < ApplicationController
   def index
-    @sponsors = Sponsors.scoped
+    @sponsors = Sponsor.scoped
   end
 end
