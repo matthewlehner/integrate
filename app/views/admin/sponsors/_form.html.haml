@@ -1,0 +1,15 @@
+= simple_form_for [:admin, @sponsor] do |f|
+  = f.error_notification
+
+  = f.input :name
+  = f.input :url
+  = f.input :description, input_html: {cols: '100', rows: '4'}
+  = f.input :logo, as: :file
+  - if @sponsor.logo
+    = image_tag @sponsor.logo.thumb('150x').url
+
+
+  .actions
+    = f.button :submit
+    or
+    = link_to 'cancel', admin_offsites_path

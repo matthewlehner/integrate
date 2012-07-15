@@ -1,0 +1,15 @@
+%table
+  %thead
+    %tr
+      %th Sponsor
+      %th Actions
+
+  %tbody
+    - for sponsor in @sponsors
+      %tr
+        %td= sponsor.name
+        %td
+          = link_to 'edit', edit_admin_sponsor_path(sponsor)
+          = link_to 'delete', admin_sponsor_path(sponsor), method: :delete, data: { confirm: 'Are you sure you want to do this? Be careful! This is permanent and cannot be undone!' }
+    %tr
+      %td{colspan: 3}= link_to 'Add new sponsor', new_admin_sponsor_path
