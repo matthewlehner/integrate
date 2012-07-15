@@ -1,5 +1,5 @@
 class Sponsor < ActiveRecord::Base
-  attr_accessible :description, :logo_uid, :name, :url
+  attr_accessible :description, :logo, :name, :url
 
   image_accessor :logo
 
