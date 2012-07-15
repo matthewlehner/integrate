@@ -1,5 +1,7 @@
 Integrate::Application.routes.draw do
 
+  resources :sponsors, only: :index
+
   resources :map, controller: :locations, only: :index
 
   resources :galleries, only: [:index, :show]
