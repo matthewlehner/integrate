@@ -11,7 +11,6 @@
     - @offsites.each do |offsite|
       %tr
         %td= offsite.name
-        %td= link_to 'Show', admin_offsite_path(offsite)
         %td= link_to 'Edit', edit_admin_offsite_path(offsite)
         %td= link_to 'Destroy', admin_offsite_path(offsite), :confirm => 'Are you sure?', :method => :delete
 
