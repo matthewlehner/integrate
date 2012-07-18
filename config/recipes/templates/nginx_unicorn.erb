@@ -3,7 +3,8 @@ upstream unicorn {
 }
 
 server {
-  server_name integratearts.cedar.io;
+  listen 80;
+  server_name integratearts.cedar.io www.integratearts.ca;
   root <%= current_path %>/public;
 
   location ^~ /assets/ {
@@ -23,4 +24,10 @@ server {
   error_page 500 502 503 504 /500.html;
   client_max_body_size 4G;
   keepalive_timeout 10;
+}
+
+server {
+  listen 80;
+  server_name integratearts.ca;
+  rewrite ^(.*)$ $scheme://www.integratearts.ca$1;
 }
