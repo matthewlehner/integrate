@@ -18,20 +18,20 @@
 .boxes
   .box
     %h2 About
-    %p Victoria's 5th annual Integrate Art Crawl will be taking place from 6: pm to 10:00 pm on August 4th. This open house event brings together Victoria's art galleries, artist-run centers, and community at large. Attendees have the opportunity to explore the city's art exibitions ...
+    %p Victoria’s 6th annual Integrate Arts Festival (formerly called Off the Grid Art Crawl) will take place August 3rd & 4th with an official art crawl, outdoor visual projections and various other art and music events throughout the festival.
     = link_to 'Read More', about_path
 
   .box
     %h2 Map
-    %p #{pluralize @galleries.count, 'galleries'}, 8 installations & extra perks on this handy map.
-    = link_to 'View Map', '#'
-    |
-    = link_to 'PDF', '#'
+    %p #{pluralize @galleries.count, 'galleries'}, #{pluralize @offsites.count, 'offsite events'} & extra perks on this handy map.
+    = link_to 'View Map', map_index_path
+    -# |
+    -# = link_to 'PDF', '#'
 
   .box
-    %h2 Buses
-    %p Victoria's 5th annual Integrate Art Crawl will be taking place from 6: pm to 10:00 pm on August 4th. This open house event brings together Victoria's art galleries, artist-run centers, and community at large. Attendees have the opportunity to explore the city's art exibitions ...
-    = link_to 'Read More', about_path
+    %h2 Events
+    %p In addition to gallery events this year Integrate will feature large-scale outdoor projections at various downtown sites, Audio Visual Experience III and a multimedia showcase.
+    -#= link_to 'Read More', about_path #FIXME - gotta get this going!
 
 :javascript
   $( function() {
