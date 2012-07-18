@@ -16,7 +16,8 @@ FactoryGirl.define do
 
   factory :offsite do
     name      'offsite event'
-    schedule  Time.zone.now
+    starts_at Time.zone.now
+    ends_at   { starts_at + 1.hour }
     details   "This is what's gonna go down."
   end
 
