@@ -38,7 +38,7 @@ class window.Integrate.Map
 
   createInfoWindow: (site, marker) ->
     infowindow = new google.maps.InfoWindow
-      content: site['name']
+      content: "<div>#{site['name']}</div><div>#{site['address']}</div>"
 
     google.maps.event.addListener marker, 'click', =>
       @infoWindow?.close()
