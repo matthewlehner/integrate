@@ -26,5 +26,8 @@ class Admin::SponsorsController < ApplicationController
   end
 
   def destroy
+    sponsor = Sponsor.find params[:id]
+    sponsor.destroy
+    redirect_to admin_sponsors_url
   end
 end

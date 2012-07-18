@@ -45,10 +45,10 @@ describe Admin::SponsorsController do
     end
   end
 
-  describe "GET 'destroy'" do
-    it "returns http success" do
-      delete 'destroy', id: sponsor.id
-      response.should be_success
+  describe "DELETE 'destroy'" do
+    it "redirects to admin/galleries index" do
+      delete :destroy, id: sponsor
+      response.should redirect_to admin_sponsors_url
     end
   end
 end
