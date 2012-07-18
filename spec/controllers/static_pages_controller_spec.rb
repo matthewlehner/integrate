@@ -4,6 +4,8 @@ describe StaticPagesController do
   describe 'GET home' do
     it 'renders the home template' do
       get :home
+      assigns(:galleries).should eq(Gallery.all)
+      assigns(:offsites).should eq(Offsite.all)
       response.should render_template('home')
     end
   end
