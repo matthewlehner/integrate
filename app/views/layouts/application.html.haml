@@ -4,6 +4,9 @@
     %title Integrate Arts Festival, Victoria, BC
 
     = stylesheet_link_tag    "application", media: "all"
+    /[if lt IE 9]
+      %script { src: "http://html5shim.googlecode.com/svn/trunk/html5.js" }
+
     = javascript_include_tag "application"
     = yield :script
 
@@ -20,6 +23,7 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
 
+
   %body
     %header
       = link_to root_path do
@@ -35,8 +39,6 @@
       .group
         .left
           © Integrate Arts Society
-
-        .mid
 
         .right
           %h3 Follow Us
