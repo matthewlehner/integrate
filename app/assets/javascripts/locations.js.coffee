@@ -37,8 +37,13 @@ class window.Integrate.Map
     @linkToEl(site['id'])
 
   createInfoWindow: (site, marker) ->
+    if site['addressable_type'] is 'Gallery'
+      content = "<div>#{site['name']}</div><div>#{site['address']}</div><div><a href=/galleries/#{site['addressable_id']}>Details</a></div>"
+    else
+      content = "<div>#{site['name']}</div><div>#{site['address']}</div>"
+
     infowindow = new google.maps.InfoWindow
-      content: "<div>#{site['name']}</div><div>#{site['address']}</div>"
+      content: content
 
     google.maps.event.addListener marker, 'click', =>
       @infoWindow?.close()

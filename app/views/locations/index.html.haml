@@ -2,7 +2,7 @@
 
 :javascript
   var mapsLoaded = function() {
-    var sites = #{@locations.as_json(only: [:id, :latitude, :longitude, :address], methods: :name).to_json};
+    var sites = #{@locations.as_json(only: [:id, :latitude, :longitude, :address, :addressable_type, :addressable_id], methods: :name).to_json};
     window.map = new Integrate.Map(sites);
   }
 
