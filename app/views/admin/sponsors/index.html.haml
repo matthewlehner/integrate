@@ -1,12 +1,14 @@
 %table
   %thead
     %tr
+      %th
       %th Sponsor
       %th Actions
 
   %tbody
     - for sponsor in @sponsors
       %tr
+        %td= sponsor.position
         %td= sponsor.name
         %td
           = link_to 'edit', edit_admin_sponsor_path(sponsor)
