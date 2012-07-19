@@ -1,10 +1,11 @@
 %h1 Sponsors
 
 - for sponsor in @sponsors
-  .information.group
+  .information.group.sponsor
     = link_to url_with_protocol(sponsor.url), class: 'logo' do
       = image_tag sponsor.logo.thumb('265x265').url
 
     .details
+      %h2= sponsor.name
       = sponsor.description
 
