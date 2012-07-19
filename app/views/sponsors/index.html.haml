@@ -6,6 +6,5 @@
       = image_tag sponsor.logo.thumb('265x200').url
 
     .details
-      %h2= sponsor.name
+      %h2= link_to sponsor.name, url_with_protocol(sponsor.url)
       = sponsor.description
-
