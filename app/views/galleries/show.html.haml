@@ -6,8 +6,8 @@
     = link_to url_with_protocol(@gallery.website) do
       #{@gallery.location.address} • #{@gallery.website}
 
-.exhibition.group
-  = image_tag @gallery.photo_uid? ? @gallery.photo.thumb('365x270#').url : 'http://twitter.github.com/bootstrap/assets/img/bootstrap-mdo-sfmoma-01.jpg', size: '640x400'
+.information.group
+  = image_tag @gallery.photo.thumb('365x270#').url
 
   .details
     %h2 Exhibition
