@@ -15,5 +15,12 @@ describe StaticPagesController do
         action:     'about'
       )
     end
+
+    it 'recognizes and generates #contact' do
+      { get: '/contact' }.should route_to(
+        controller: 'static_pages',
+        action:     'about'
+      )
+    end
   end
 end
