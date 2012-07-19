@@ -6,7 +6,8 @@ class Gallery < ActiveRecord::Base
 
   image_accessor :photo
 
-  validates_presence_of :name, :photo
+  validates_presence_of :name
+  validates_presence_of :photo, on: :create
 
   default_scope order("LOWER(name)")
 end
