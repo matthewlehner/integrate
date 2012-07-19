@@ -1,31 +1,28 @@
-.gallery, .about, .map {
-  > .group {
-    margin-top: 20px;
-    margin-bottom: 40px;
+.information.group {
+  margin-top: 20px;
+  margin-bottom: 40px;
 
-    > img {
-      width: 365px;
-      height: 270px;
-      float:left;
-    }
+  > img {
+    width: 365px;
+    float:left;
+  }
 
-    > .details {
-      margin-left: 365px;
-      padding: 0 80px 40px 40px;
-      > h2 {
-        margin-top: 0;
-      }
+  > .details {
+    margin-left: 365px;
+    padding: 0 80px 40px 40px;
+    > h2 {
+      margin-top: 0;
     }
   }
+}
 
-  > .info {
-    width:960px;
-    margin:auto;
-  }
+> .info {
+  width:960px;
+  margin:auto;
+}
 
-  p {
-    margin-bottom: 1.6 * $baseLineHeight;
-  }
+p {
+  margin-bottom: 1.6 * $baseLineHeight;
 }
 
 .gallery {
