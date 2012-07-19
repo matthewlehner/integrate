@@ -75,7 +75,7 @@ body {
       > ul {
         @include horizontal-list;
         > li {
-          padding-right: 12px;
+          padding-right: 20px;
 
           a {
             text-transform: uppercase;
