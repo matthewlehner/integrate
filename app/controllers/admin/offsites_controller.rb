@@ -28,6 +28,11 @@ class Admin::OffsitesController < ApplicationController
 
   def update
     @offsite = Offsite.find(params[:id])
+    if @offsite.update_attributes(params[:offsite])
+      redirect_to admin_offsites_url
+    else
+      render action: 'edit'
+    end
   end
 
   def destroy
