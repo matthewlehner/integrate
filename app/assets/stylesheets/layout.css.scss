@@ -60,6 +60,13 @@ body {
       height: 78px;
     }
 
+    > small {
+      position: absolute;
+      top: 59px;
+      left: 290px;
+      color: $gray;
+    }
+
     > nav {
       position: absolute;
       right: 40px;
