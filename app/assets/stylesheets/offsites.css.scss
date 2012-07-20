@@ -1,0 +1,23 @@
+table.events {
+  & > tbody {
+    & > tr { 
+      &:hover {
+        background: #FFF;
+      }
+
+      & > td {
+        &.time {
+          width: 200px;
+        }
+
+        &.details {
+          padding: 24px 7px;
+
+          h2 {
+            margin-top:0;
+          }
+        }
+      }
+    }
+  }
+}
