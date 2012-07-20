@@ -5,6 +5,7 @@ Integrate::Application.routes.draw do
   resources :map, controller: :locations, only: :index
 
   resources :galleries, only: [:index, :show]
+  resources :offsites, only: :index
 
   namespace :admin do
     resources :galleries, except: :show
