@@ -1,0 +1,16 @@
+%h1 Offsite Events
+
+%table.events
+  %tbody
+    - for offsite in @offsites
+      %tr{ id: "offsite-#{offsite.id}" }
+        %td.time
+          Starts: #{l offsite.starts_at}
+          %br
+          Ends: #{l offsite.ends_at}
+
+        %td.details
+          %h2= offsite.name
+          = offsite.details
+          %br
+          = offsite.location.address
