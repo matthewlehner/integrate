@@ -31,10 +31,28 @@ class window.Integrate.Map
       map: @map
       title: site['name']
       animation: google.maps.Animation.DROP
+      icon: @pinImage(site)
+      shadow: @pinShadow()
 
     @markers[site['id']] = marker
     @createInfoWindow(site, marker)
     @linkToEl(site['id'])
+
+  pinImage: (site) ->
+    if site['addressable_type'] is 'Gallery'
+      pinColor = '555555'
+    else if site['addressable_type'] is 'Offsite'
+      pinColor = '22C2EB'
+    new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|#{pinColor}"
+        new google.maps.Size(21, 34)
+        new google.maps.Point(0,0)
+        new google.maps.Point(10, 34))
+
+  pinShadow: ->
+    new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_shadow",
+      new google.maps.Size(40, 37)
+      new google.maps.Point(0, 0)
+      new google.maps.Point(12, 35))
 
   createInfoWindow: (site, marker) ->
     if site['addressable_type'] is 'Gallery'
