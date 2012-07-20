@@ -38,9 +38,11 @@ class window.Integrate.Map
 
   createInfoWindow: (site, marker) ->
     if site['addressable_type'] is 'Gallery'
-      content = "<div>#{site['name']}</div><div>#{site['address']}</div><div><a href=/galleries/#{site['addressable_id']}>Details</a></div>"
-    else
-      content = "<div>#{site['name']}</div><div>#{site['address']}</div>"
+      linkHref = "galleries/#{site['addressable_id']}"
+    else if site['addressable_type'] is 'Offsite'
+      linkHref = "offsites#offsite-#{site['addressable_id']}"
+
+    content = "<div>#{site['name']}</div><div>#{site['address']}</div><div><a href=/#{linkHref}>Details</a></div>"
 
     infowindow = new google.maps.InfoWindow
       content: content
