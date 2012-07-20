@@ -41,4 +41,13 @@
         - if location.addressable_type == 'Offsite'
           %li{ data: {location_id: location.id}}= location.name
 
-  #map_canvas
+  .map_area
+    #map_canvas
+    %ul.legend
+      %li
+        = image_tag "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|555555"
+        Gallery
+      %li
+        = image_tag "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|22C2EB"
+        Offsite Event
+
