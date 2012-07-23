@@ -31,13 +31,13 @@
   .locations
     %h2.galleries Galleries
     %ul.galleries.active
-      -for location in @locations.sort_by(&:name)
+      -for location in @locations.sort_by { |l| l.name.downcase }
         - if location.addressable_type == 'Gallery'
           %li{ data: {location_id: location.id}}= location.name
 
     %h2.off-sites Off Site Events
     %ul.off-sites
-      -for location in @locations.sort_by(&:name)
+      -for location in @locations.sort_by { |l| l.name.downcase }
         - if location.addressable_type == 'Offsite'
           %li{ data: {location_id: location.id}}= location.name
 
