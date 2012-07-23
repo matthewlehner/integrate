@@ -23,4 +23,11 @@ describe StaticPagesController do
       response.should render_template('contact')
     end
   end
+
+  describe 'mobile GET home' do
+    it 'renders the mobile home template' do
+      get :home, {}, user_agent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3'
+      controller.view_paths.should include(Rails.root + 'app/views/mobile_views')
+    end
+  end
 end
