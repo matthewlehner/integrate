@@ -1,16 +1,44 @@
-%h1 Offsite Events
+%h1 
+  Offsite Events
+  %small Click on event heading to expand info.
 
-%table.events
-  %tbody
-    - for offsite in @offsites
-      %tr{ id: "offsite-#{offsite.id}" }
-        %td.time
-          Starts: #{l offsite.starts_at}
-          %br
-          Ends: #{l offsite.ends_at}
+.events
+  - for offsite in @offsites
+    .event{ id: "offsite-#{offsite.id}" }
+      %a{ href: "#offsite-#{offsite.id}" }
+        %h2.group
+          = offsite.name
+          %small
+            =l offsite.starts_at
+            to
+            =l offsite.ends_at
 
-        %td.details
-          %h2= offsite.name
-          = simple_format(offsite.details)
-          %br
-          = offsite.location.address
+      .details
+        %p.address= offsite.location.address
+        = simple_format(offsite.details)
+
+:javascript
+  $( function () {
+    var accordion_head = $('.events > .event > a'),
+        accordion_body = $('.events .event > .details');
+
+    if (window.location.hash.length > 0) {
+      $(window.location.hash + ' > a').addClass('active');
+    }
+
+    accordion_head.on('click', function(event) {
+      event.preventDefault();
+
+      var $this = $(this);
+
+      if ($this.attr('class') != 'active') {
+        accordion_body.slideUp('normal');
+        $this.next().stop(true,true).slideToggle('normal');
+        accordion_head.removeClass('active');
+        $this.addClass('active');
+      } else {
+        accordion_body.slideUp('normal');
+        $this.removeClass('active');
+      }
+    });
+  });

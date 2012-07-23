@@ -1,23 +1,29 @@
-table.events {
-  & > tbody {
-    & > tr { 
-      &:hover {
-        background: #FFF;
+.event {
+  > a {
+    &:hover {
+      text-decoration: none;
+    }
+
+    h2 {
+      color: $grayDarker;
+      background: $graySite;
+      padding: 4px;
+      > small {
+        float: right;
+        font-size: 14px;
+        text-transform:none;
       }
+    }
+  }
 
-      & > td {
-        &.time {
-          width: 200px;
-        }
+  & > .details {
+    display: none;
+    @include single-transition('height', '0.5s', ease);
+  }
 
-        &.details {
-          padding: 24px 7px;
-
-          h2 {
-            margin-top:0;
-          }
-        }
-      }
+  &:target {
+    & > .details {
+      display: block;
     }
   }
 }
