@@ -1,0 +1,22 @@
+#= require zepto
+#= require underscore
+#= require backbone
+#= require_self
+#= require_tree ../templates
+#= require_tree ./backbone
+
+
+window.Integrate ?= {}
+
+_.extend Integrate,
+  Models: {}
+  Collections: {}
+  Views: {}
+  Routers: {}
+  env: <%= Rails.env.to_json %>
+  init: ->
+    new Integrate.Routers.Index()
+    Backbone.history.start()
+
+$(document).ready ->
+  Integrate.init()
