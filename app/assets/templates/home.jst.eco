@@ -1,9 +1,11 @@
-<h1 class='logo'>
-  Integrate
-  <sub>
-    Arts Festival
-  </sub>
-</h1>
+<header>
+  <h1 class='logo'>
+    Integrate
+    <sub>
+      Arts Festival
+    </sub>
+  </h1>
+</header>
 
 <nav>
   <ul>
