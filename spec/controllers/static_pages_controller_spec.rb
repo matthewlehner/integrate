@@ -26,7 +26,9 @@ describe StaticPagesController do
 
   describe 'mobile GET home' do
     it 'renders the mobile home template' do
-      get :home, {}, user_agent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3'
+      request.stub!(:user_agent).and_return('Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3')
+      get :home
+      controller.mobile_device?.should be_true
       controller.view_paths.should include(Rails.root + 'app/views/mobile_views')
     end
   end
