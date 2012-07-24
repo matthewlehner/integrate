@@ -14,5 +14,5 @@ class Integrate.Views.Index extends Backbone.View
 
   selectMenu: ->
     path = $(event.srcElement).html().toLowerCase()
-    @navigate path
+    @navigate path, trigger: true
     this
