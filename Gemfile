@@ -33,13 +33,14 @@ group :development do
   gem 'rack-livereload'
   gem 'ruby_gntp'
   gem 'rails_best_practices'
-  gem 'pry'
 end
 
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
+  gem 'pry'
 end
 
 group :test do
   gem "factory_girl_rails", "~> 3.5.0"
+  gem "capybara"
 end
