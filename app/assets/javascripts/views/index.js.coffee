@@ -1,5 +1,5 @@
-class Integrate.Views.Index extends Backbone.View
-  template: JST['index']
+class Integrate.Views.Home extends Backbone.View
+  template: JST['home']
 
   events:
     'click li': 'selectMenu'
