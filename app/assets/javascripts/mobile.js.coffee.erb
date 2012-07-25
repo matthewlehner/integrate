@@ -19,7 +19,7 @@ _.extend Integrate,
   Routers: {}
   env: <%= Rails.env.to_json %>
   init: ->
-    new Integrate.Routers.Index()
+    @app = new Integrate.Routers.Index()
     Backbone.history.start()
 
 $(document).ready ->
