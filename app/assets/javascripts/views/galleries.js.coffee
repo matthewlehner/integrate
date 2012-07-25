@@ -3,12 +3,18 @@ class Integrate.Views.Galleries extends Backbone.View
 
   template: JST['galleries']
 
-  initialize: ->
+  events:
+    'click li': 'open'
+
+  initialize: =>
     if @options.router?.navigate?
       @navigate = @options.router.navigate
 
-  render: ->
-    $(@el).html @template()
+    @collection.bind('reset', @render)
+
+  render: =>
+    @$el.html @template()
+
     $galleries = this.$('ul')
     collection = @collection
     collection.each (gallery) ->
@@ -18,12 +24,20 @@ class Integrate.Views.Galleries extends Backbone.View
       $galleries.append view.render().el
     this
 
+  open: =>
+    id = $(event.srcElement).data('model').id
+    @navigate "galleries/#{id}", trigger: true
+
 class Integrate.Views.GalleryList extends Backbone.View
   tagName: 'li'
 
-  template: JST['galleryList']
+  initialize: ->
+    @id = @model.id
 
-  render: ->
+  template: JST['gallerylist']
+
+  render: =>
     renderedContent = @template @model.toJSON()
-    $(@el).html renderedContent
+    @$el.html renderedContent
+    @$el.data('model', @model)
     this
