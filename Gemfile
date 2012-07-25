@@ -15,6 +15,7 @@ end
 
 gem 'jquery-rails'
 gem 'haml-rails'
+gem 'jbuilder'
 
 # Use unicorn as the app server
 gem 'unicorn'
