@@ -1,18 +1,29 @@
 class Integrate.Views.Home extends Backbone.View
   template: JST['home']
 
+  id: 'home'
+
   events:
-    'click li': 'selectMenu'
+    'tap li': 'selectMenu'
 
   initialize: ->
     if @options.router?.navigate?
       @navigate = @options.router.navigate
 
   render: ->
-    $(@el).html @template()
+    @$el.html @template()
     this
 
   selectMenu: ->
-    path = $(event.srcElement).html().toLowerCase()
+    $target = $(event.srcElement)
+
+    if $target.is('i') or $target.is('span')
+      path = $target.parent().data('link')
+    else
+      path = $target.data('link')
+
     @navigate path, trigger: true
+
+    event.preventDefault()
+
     this
