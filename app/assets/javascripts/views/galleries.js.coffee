@@ -26,6 +26,9 @@ class Integrate.Views.Galleries extends Backbone.View
 
   open: =>
     id = $(event.srcElement).data('model').id
+
+    event.preventDefault()
+
     @navigate "galleries/#{id}", trigger: true
 
 class Integrate.Views.GalleryList extends Backbone.View
