@@ -1,6 +1,6 @@
 class GalleriesController < ApplicationController
   def index
-    @galleries = Gallery.scoped
+    @galleries = Gallery.includes(:location)
   end
 
   def show
