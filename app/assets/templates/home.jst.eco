@@ -9,9 +9,23 @@
 
 <nav>
   <ul>
-    <li>Map</li>
-    <li>Galleries</li>
-    <li>Events</li>
-    <li>About</li>
+    <li data-link='map'>
+      <i class='map'></i>
+      <span>Map</span>
+    </li>
+    <li data-link='galleries'>
+      <i class='galleries'></i>
+      <span>Galleries</span>
+    </li>
+    <li data-link='events'>
+      <i class='events'></i>
+      <span>Events</span>
+    </li>
+    <li data-link='about'>
+      <i class='about'></i>
+      <span>About</span>
+    </li>
   </ul>
 </nav>
+
+
