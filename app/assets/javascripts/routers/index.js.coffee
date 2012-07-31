@@ -19,25 +19,26 @@ class Integrate.Routers.Index extends Backbone.Router
     @$container.html(@currentView.render().el)
 
   map: ->
+    @initCollections() unless @locations?
     @currentView = new Integrate.Views.Map(router: this)
     @$container.html(@currentView.render().el)
 
   galleryIndex: ->
-    @initGalleries() unless @galleries?
+    @initCollections() unless @galleries?
 
     @currentView = new Integrate.Views.Galleries(router: this, collection: @galleries)
     @$container.html(@currentView.render().el)
 
   galleryShow: (id) ->
-    @initGalleries() unless @galleries?
+    @initCollections() unless @galleries?
     @currentView = new Integrate.Views.Gallery(router: this, id: id, collection: @galleries)
     @$container.html(@currentView.render().el)
 
-  initGalleries: ->
+  initCollections: ->
     unless @galleries?
       @galleries = new Integrate.Collections.Galleries
 
-    # unless @events?
-    #   @events = new Integrate.Collections.Events
+    unless @events?
+      @events = new Integrate.Collections.Events
 
     # @locations = new Integrate.Collections.Locations
