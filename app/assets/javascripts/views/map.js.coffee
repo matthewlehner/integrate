@@ -5,6 +5,12 @@ class Integrate.Views.Map extends Backbone.View
     if @options.router?.navigate?
       @navigate = @options.router.navigate
 
+    if @options.galleries?
+      @collectionToSites @options.galleries, 'gallery'
+
+    if @options.offsites?
+      @collectionToSites @options.offsites, 'event'
+
     if window.google?.maps?
       @initializeMap()
       @addMarkers()
@@ -15,16 +21,6 @@ class Integrate.Views.Map extends Backbone.View
         @addMarkers()
 
       @loadMapScript('window.mapsLoaded')
-
-    if @options.galleries?
-      @collectionToSites @options.galleries, 'gallery'
-
-    if @options.offsites?
-      @collectionToSites @options.offsites, 'event'
-
-    @bind 'render',
-      if google?
-        google.maps.event.trigger @mapObject, 'resize'
 
   loadMapScript: (callback) ->
     script = document.createElement("script");
