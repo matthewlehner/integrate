@@ -66,7 +66,7 @@ class Integrate.Views.Map extends Backbone.View
 
   createInfoWindow: (site, marker) ->
     if site['type'] is 'gallery'
-      linkHref = "/#galleries/#{site['id']}"
+      linkHref = "#galleries/#{site['id']}"
     else if site['type'] is 'event'
       linkHref = "#event/#{site['id']}"
 
