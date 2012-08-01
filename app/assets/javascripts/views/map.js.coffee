@@ -2,23 +2,25 @@ class Integrate.Views.Map extends Backbone.View
   id: 'map_canvas'
 
   initialize: ->
-    @sites = []
-
     if @options.router?.navigate?
       @navigate = @options.router.navigate
+
+    if window.google?.maps?
+      @initializeMap()
+      @addMarkers()
+
+    else
+      window.mapsLoaded = =>
+        @initializeMap()
+        @addMarkers()
+
+      @loadMapScript('window.mapsLoaded')
 
     if @options.galleries?
       @collectionToSites @options.galleries, 'gallery'
 
     if @options.events?
       @collectionToSites @options.events, 'event'
-
-    unless window.google?.maps?
-      window.mapsLoaded = =>
-        @initializeMap()
-        @addMarkers()
-
-      @loadMapScript('window.mapsLoaded')
 
   loadMapScript: (callback) ->
     script = document.createElement("script");
@@ -81,6 +83,8 @@ class Integrate.Views.Map extends Backbone.View
       infowindow.open @mapObject, marker
 
   collectionToSites: (collection, type) ->
+    @sites ?= []
+
     for object in collection.toJSON()
       location = _.pick(object, 'id', 'name', 'address', 'latitude', 'longitude')
       _.extend location, type: type
