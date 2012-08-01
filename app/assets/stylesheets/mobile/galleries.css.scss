@@ -3,6 +3,7 @@
     margin: auto;
     padding:0;
     background: $graySite;
+    overflow: hidden;
   }
 
   img {
@@ -12,5 +13,7 @@
     height: 200px;
     display: block;
     margin: 0 auto;
+
+    @include box-shadow(0 0 42px rgba(0,0,0,0.5));
   }
 }
