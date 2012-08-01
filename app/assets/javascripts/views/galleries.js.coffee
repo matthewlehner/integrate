@@ -4,7 +4,7 @@ class Integrate.Views.Galleries extends Backbone.View
   template: JST['galleries']
 
   events:
-    'click li': 'open'
+    'tap li': 'open'
 
   initialize: =>
     if @options.router?.navigate?
