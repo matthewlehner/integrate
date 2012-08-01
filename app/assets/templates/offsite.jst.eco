@@ -1,0 +1,18 @@
+<header>
+  <h1>
+    <%= @name %>
+  </h1>
+</header>
+
+<article>
+  <p class='time'>
+    <%= @starts_at %> to <%= @ends_at %>
+  </p>
+
+  <p class='address'>
+    <%- @address if @address %>
+  </p>
+
+  <h2>Details</h2>
+  <%- Integrate.simpleFormat @details %>
+</article>

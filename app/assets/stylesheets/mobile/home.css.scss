@@ -1,0 +1,72 @@
+#home {
+  nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      width: 220px;
+      margin: 0 auto;
+
+      li {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        background: lighten($grayLight, 20%);
+        @include border-radius( 5px );
+        @include box-shadow( inset 1px 1px 0 rgba(255, 255, 255, 0.4), 
+                             inset -1px -1px 0 rgba(0, 0, 0, 0.4) );
+        border: 1px solid darken($graySite, 3%);
+        color: $gray;
+        @include text-shadow(0 1px 0 rgba(255, 255, 255, 0.4));
+        position: relative;
+        margin: 8px;
+
+        i {
+          position:absolute;
+          width: 100%;
+          margin: 0 auto;
+          display: block;
+          top: 50%;
+          left: 50%;
+          margin-top: -21px;
+          width:26px;
+          margin-left: -13px;
+          height: 26px;
+        }
+
+        &[data-link="map"] i.map {
+          width: 16px;
+          margin-left: -8px;
+          margin-top: -19px;
+          @include sprite(map-marker);
+        }
+
+        &[data-link="galleries"] > i.galleries {
+          @include sprite(galleries);
+        }
+
+        &[data-link=events] i.events {
+          margin-top: -19px;
+          @include sprite(calendar);
+        }
+
+        &[data-link=about] i.about {
+          width: 28px;
+          margin-left: -14px;
+          height: 28px;
+          margin-top: -19px;
+          @include sprite(info);
+        }
+
+        > span {
+          display: block;
+          position: absolute;
+          bottom: 6px;
+          width: 100%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}

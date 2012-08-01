@@ -10,3 +10,8 @@ $white:       #FFF !default;
 
 $lightBlue:   #22C2EB;
 $graySite:    #CFD2D1;
+
+@mixin defaultFont {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}

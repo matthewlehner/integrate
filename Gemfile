@@ -9,10 +9,13 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'compass-rails'
   gem 'uglifier', '>= 1.0.3'
+  gem 'ejs'
+  gem 'eco'
 end
 
 gem 'jquery-rails'
 gem 'haml-rails'
+gem 'jbuilder'
 
 # Use unicorn as the app server
 gem 'unicorn'
@@ -33,13 +36,14 @@ group :development do
   gem 'rack-livereload'
   gem 'ruby_gntp'
   gem 'rails_best_practices'
-  gem 'pry'
 end
 
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
+  gem 'pry'
 end
 
 group :test do
   gem "factory_girl_rails", "~> 3.5.0"
+  gem "capybara"
 end

@@ -1,0 +1,19 @@
+<img src=<%= @photo %>>
+<header>
+  <h1>
+    <%= @name %>
+  </h1>
+</header>
+<article>
+  <ul>
+    <%- "<li>#{@address}</li>" if @address %>
+    <%- "<li><a href='#{@url}'>#{@url.replace('http://', '')}</a></li>" %>
+  </ul>
+
+  <h2>Hours During Festival</h2>
+  <p><%- @festival_hours.replace("\n", "<br/>") %></p>
+
+  <h2>Exhibition</h2>
+  <p><%= @exhibition_description %>
+
+</article>
