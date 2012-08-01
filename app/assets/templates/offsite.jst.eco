@@ -3,16 +3,16 @@
     <%= @name %>
   </h1>
 </header>
+
 <article>
-  <p>
-    <%= @starts_at %>
-    to
-    <%= @ends_at %>
+  <p class='time'>
+    <%= @starts_at %> to <%= @ends_at %>
   </p>
 
-  <%- @address if @address %>
+  <p class='address'>
+    <%- @address if @address %>
+  </p>
 
   <h2>Details</h2>
   <%- Integrate.simpleFormat @details %>
-
 </article>
