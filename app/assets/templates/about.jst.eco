@@ -1,6 +1,13 @@
 <header>
-  <h1>About</h1>
+  <h1 class='logo'>
+    Integrate
+    <sub>
+      Arts Festival
+    </sub>
+  </h1>
+  <p>August 3/4, 2012</p>
 </header>
+
 <article>
   <p>
     Victoria’s 6th annual Integrate Arts Festival (formerly called Off the Grid Art Crawl) will take place August 3rd & 4th with an official art crawl, outdoor visual projections and various other art and music events throughout the festival.
