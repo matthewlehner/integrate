@@ -1,5 +1,11 @@
 <div class='image'>
-  <img src=<%= @photo %> width=320 height=200 >
+  <% if window.devicePixelRatio is 2 : %>
+    <img src=<%= @photo2x %> width=320 height=200 >
+
+  <% else: %>
+    <img src=<%= @photo %> width=320 height=200 >
+
+  <% end %>
 </div>
 
 <header>
