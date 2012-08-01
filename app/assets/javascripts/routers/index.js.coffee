@@ -61,4 +61,8 @@ class Integrate.Routers.Index extends Backbone.Router
     @$container.html(@currentView.render().el)
 
   offsiteShow: (id) ->
-    console.log "show offsite #{id}"
+    @currentView = new Integrate.Views.Offsite
+      router: this
+      id: id
+      collection: @offsites
+    @$container.html(@currentView.render().el)
