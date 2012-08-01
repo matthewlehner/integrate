@@ -37,7 +37,6 @@ class Integrate.Routers.Index extends Backbone.Router
       offsites:  @offsites
     )
     @$container.html(@currentView.render().el)
-    google.maps.event.trigger @currentView.mapObject, 'resize'
 
   galleryIndex: ->
     @currentView = new Integrate.Views.Galleries

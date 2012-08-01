@@ -22,6 +22,10 @@ class Integrate.Views.Map extends Backbone.View
     if @options.offsites?
       @collectionToSites @options.offsites, 'event'
 
+    @bind 'render',
+      if google?
+        google.maps.event.trigger @mapObject, 'resize'
+
   loadMapScript: (callback) ->
     script = document.createElement("script");
     script.type = "text/javascript";
