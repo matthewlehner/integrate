@@ -3,11 +3,8 @@ html, body, #container {
   height: 100%;
   padding:0;
   margin:0;
-}
-
-#container {
-  font-family: 'Helvetica Neue';
-  font-weight: 300;
+  @include defaultFont;
+  color: $grayDark;
 }
 
 .logo {
@@ -18,10 +15,11 @@ html, body, #container {
   white-space: nowrap;
   overflow: hidden;
   margin: 12px auto 25px;
+  border-bottom: none;
 
   @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5) {
     background: image-url('mobile/logo2x.png') no-repeat;
-    background-size: 300px 93px; 
+    background-size: 300px 93px;
   }
 }
 
@@ -29,4 +27,66 @@ html, body, #container {
   width: 100%;
   height: 100%;
   padding: -8px;
+}
+
+header {
+  h1 {
+    margin: 0;
+    text-align: center;
+    background: $lightBlue;
+    font-size: 32px;
+    color: white;
+    @include text-shadow(1px 1px 1px rgba(0,0,0,0.3));
+    text-transform: uppercase;
+    border-bottom: 1px solid $grayLight;
+  }
+
+  p {
+    width: 270px;
+    text-align: right;
+    margin: -20px auto 20px;
+    font-size: 14px;
+    color: $grayLight;
+  }
+}
+
+.list {
+  ul {
+    @include no-bullet;
+    margin:0;
+    padding:0;
+
+    li {
+      border-top: 1px solid $grayLighter;
+      padding: 0 6px 0 12px;
+      height: 48px;
+      line-height: 48px;
+      font-size: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow:ellipsis;
+
+      &:first-child {
+        border-top: none;
+      }
+    }
+  }
+}
+
+h2 {
+  color: $gray;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-bottom: 1px solid $graySite;
+  margin: 0 -6px;
+  padding: 0 6px;
+}
+
+article {
+  padding: 6px;
+}
+
+ul {
+  @include no-bullets;
+  padding-left: 0;
 }
