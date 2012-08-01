@@ -19,8 +19,8 @@ class Integrate.Views.Map extends Backbone.View
     if @options.galleries?
       @collectionToSites @options.galleries, 'gallery'
 
-    if @options.events?
-      @collectionToSites @options.events, 'event'
+    if @options.offsites?
+      @collectionToSites @options.offsites, 'event'
 
   loadMapScript: (callback) ->
     script = document.createElement("script");
@@ -70,7 +70,7 @@ class Integrate.Views.Map extends Backbone.View
     if site['type'] is 'gallery'
       linkHref = "#galleries/#{site['id']}"
     else if site['type'] is 'event'
-      linkHref = "#event/#{site['id']}"
+      linkHref = "#events/#{site['id']}"
 
     content = "<div>#{site['name']}</div><div>#{site['address']}</div><div><a href=/#{linkHref}>Details</a></div>"
 
