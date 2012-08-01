@@ -1,9 +1,13 @@
-<img src=<%= @photo %>>
+<div class='image'>
+  <img src=<%= @photo %> width=320 height=200 >
+</div>
+
 <header>
   <h1>
     <%= @name %>
   </h1>
 </header>
+
 <article>
   <ul>
     <%- "<li>#{@address}</li>" if @address %>
@@ -14,6 +18,5 @@
   <p><%- @festival_hours.replace("\n", "<br/>") %></p>
 
   <h2>Exhibition</h2>
-  <p><%= @exhibition_description %>
-
+  <%= Integrate.simpleFormat(@exhibition_description) %>
 </article>
