@@ -1,9 +1,9 @@
-$sprites: sprite-map("mobile/icons/*.png");
-$sprites2x: sprite-map("mobile/icons2x/*.png");
+$sprites: sprite-map("mobile/icons/*.png", $spacing: 1px);
+$sprites2x: sprite-map("mobile/icons2x/*.png", $spacing: 1px);
 
 @mixin retina-sprite($name, $sprites, $sprites2x, $dimensions: true, $pad: 0) {
   @if $dimensions == true {
-    sprite-dimensions: ($sprites, $name);
+    @include sprite-dimensions($sprites, $name);
   }
 
   background-image: sprite-url($sprites);
@@ -19,10 +19,10 @@ $sprites2x: sprite-map("mobile/icons2x/*.png");
       $pos: sprite-position($sprites2x, $name, -$pad*2, -$pad*2);
       background-image: sprite-url($sprites2x);
       background-position: nth($pos, 1) nth($pos, 2)/2;
-      background-size: (ceil(image-width(sprite-path($sprites2x)) / 2), auto); 
+      @include background-size(ceil(image-width(sprite-path($sprites2x)) / 2), auto);
     }
   }
-}  
+}
 
 @mixin sprite($name) {
   @include retina-sprite($name, $sprites, $sprites2x);
