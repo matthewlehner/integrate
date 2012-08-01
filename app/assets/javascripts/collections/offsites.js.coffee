@@ -1,5 +1,5 @@
-class Integrate.Collections.Events extends Backbone.Collection
-  model: Integrate.Models.Event
+class Integrate.Collections.Offsites extends Backbone.Collection
+  model: Integrate.Models.Offsite
 
   url: '/offsites'
 

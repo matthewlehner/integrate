@@ -1,1 +1,1 @@
-class Integrate.Models.Event extends Backbone.Model
+class Integrate.Models.Offsite extends Backbone.Model
