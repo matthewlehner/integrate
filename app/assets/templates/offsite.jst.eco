@@ -5,14 +5,14 @@
 </header>
 <article>
   <p>
-    <% @starts_at %>
+    <%= @starts_at %>
     to
-    <% @ends_at %>
+    <%= @ends_at %>
   </p>
 
   <%- @address if @address %>
 
   <h2>Details</h2>
-  <p><%- @details.replace("\n", "<br/>") %></p>
+  <%- Integrate.simpleFormat @details %>
 
 </article>
