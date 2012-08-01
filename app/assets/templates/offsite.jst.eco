@@ -1,0 +1,18 @@
+<header>
+  <h1>
+    <%= @name %>
+  </h1>
+</header>
+<article>
+  <p>
+    <% @starts_at %>
+    to
+    <% @ends_at %>
+  </p>
+
+  <%- @address if @address %>
+
+  <h2>Details</h2>
+  <p><%- @details.replace("\n", "<br/>") %></p>
+
+</article>
