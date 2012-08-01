@@ -18,5 +18,5 @@
   <p><%- @festival_hours.replace("\n", "<br/>") %></p>
 
   <h2>Exhibition</h2>
-  <%= Integrate.simpleFormat(@exhibition_description) %>
+  <%- Integrate.simpleFormat(@exhibition_description) %>
 </article>
