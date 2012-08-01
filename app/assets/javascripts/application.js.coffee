@@ -3,6 +3,7 @@
 #= require bootstrap-transition
 #= require bootstrap-carousel
 #= require_self
+#= require locations
 
 class window.Integrate
   @startCarousel: (el) ->
