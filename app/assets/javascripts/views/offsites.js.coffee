@@ -1,5 +1,5 @@
 class Integrate.Views.Offsites extends Backbone.View
-  className: 'events'
+  className: 'events list'
 
   template: JST['offsites']
 

@@ -1,5 +1,5 @@
 class Integrate.Views.Galleries extends Backbone.View
-  className: 'galleries'
+  className: 'galleries list'
 
   template: JST['galleries']
 
