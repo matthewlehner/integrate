@@ -1,7 +1,7 @@
 class Integrate.Routers.Index extends Backbone.Router
   initialize: ->
     @$container = $('#container')
-    @initCollections()
+    @initCollections() unless @collectionsCreated?
 
   routes:
     ''              : 'index'
@@ -19,19 +19,31 @@ class Integrate.Routers.Index extends Backbone.Router
     @$container.html(@currentView.render().el)
 
   map: ->
-    @initCollections() unless @locations?
-    @currentView = new Integrate.Views.Map(router: this)
+    @initCollections() unless @collectionsCreated?
+    @currentView = new Integrate.Views.Map(
+      router: this
+      galleries: @galleries
+      events:    @events
+    )
     @$container.html(@currentView.render().el)
+    google.maps.event.trigger @currentView.mapObject, 'resize'
 
   galleryIndex: ->
-    @initCollections() unless @galleries?
+    @initCollections() unless @collectionsCreated?
 
-    @currentView = new Integrate.Views.Galleries(router: this, collection: @galleries)
+    @currentView = new Integrate.Views.Galleries
+      router: this
+      collection: @galleries
+
     @$container.html(@currentView.render().el)
 
   galleryShow: (id) ->
-    @initCollections() unless @galleries?
-    @currentView = new Integrate.Views.Gallery(router: this, id: id, collection: @galleries)
+    @initCollections() unless @collectionsCreated?
+    @currentView = new Integrate.Views.Gallery
+      router: this
+      id: id
+      collection: @galleries
+
     @$container.html(@currentView.render().el)
 
   initCollections: ->
@@ -41,4 +53,6 @@ class Integrate.Routers.Index extends Backbone.Router
     unless @events?
       @events = new Integrate.Collections.Events
 
-    # @locations = new Integrate.Collections.Locations
+    @collectionsCreated = true
+
+    this
