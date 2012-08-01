@@ -1,5 +1,6 @@
 @import 'compass/css3';
-@import 'compass/utilities/sprites';
+@import 'compass/utilities';
+
 @import 'variables';
 
 $icon2x-sprite-base-class: 'icon';
@@ -7,4 +8,4 @@ $icon2x-sprite-base-class: 'icon';
 
 @import 'mobile/layout';
 @import 'mobile/home';
-
+@import 'mobile/offsites';
