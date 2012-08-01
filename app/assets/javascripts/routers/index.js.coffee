@@ -19,6 +19,8 @@ class Integrate.Routers.Index extends Backbone.Router
     'map'           : 'map'
     'galleries'     : 'galleryIndex'
     'galleries/:id' : 'galleryShow'
+    'events'        : 'offsitesIndex'
+    'events/:id'    : 'offsiteShow'
 
   index: ->
     @currentView = new Integrate.Views.Home(router: this)
@@ -52,13 +54,11 @@ class Integrate.Routers.Index extends Backbone.Router
 
     @$container.html(@currentView.render().el)
 
-  initCollections: ->
-    unless @galleries?
-      @galleries = new Integrate.Collections.Galleries
+  offsitesIndex: ->
+    @currentView = new Integrate.Views.Offsites
+      router: this
+      collection: @offsites
+    @$container.html(@currentView.render().el)
 
-    unless @events?
-      @events = new Integrate.Collections.Events
-
-    @collectionsCreated = true
-
-    this
+  offsiteShow: (id) ->
+    console.log "show offsite #{id}"
