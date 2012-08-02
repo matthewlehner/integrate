@@ -17,7 +17,7 @@ html, body, #container {
   margin: 12px auto 25px;
   border-bottom: none;
 
-  @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5) {
+  @media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 1.5) {
     background: image-url('mobile/logo2x.png') no-repeat;
     @include background-size(300px, 93px);
   }

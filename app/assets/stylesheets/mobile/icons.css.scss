@@ -14,7 +14,7 @@ $sprites2x: sprite-map("mobile/icons2x/*.png", $spacing: 1px);
     padding: $pad;
   }
 
-  @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5) {
+  @media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2) {
     & {
       $pos: sprite-position($sprites2x, $name, -$pad*2, -$pad*2);
       background-image: sprite-url($sprites2x);
