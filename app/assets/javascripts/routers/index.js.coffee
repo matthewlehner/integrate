@@ -12,13 +12,17 @@ class Integrate.Routers.Index extends Backbone.Router
       @offsites = new Integrate.Collections.Offsites
       @offsites.fetch()
 
+    unless @sponsors?
+      @sponsors = new Integrate.Collections.Sponsors
+      @sponsors.fetch()
+
     @collectionsCreated = true
     this
 
   routes:
     ''              : 'index'
     'about'         : 'about'
-    'sponsors'      : 'sponsors'
+    'sponsors'      : 'sponsorsIndex'
     'map'           : 'map'
     'galleries'     : 'galleryIndex'
     'galleries/:id' : 'galleryShow'
@@ -35,8 +39,10 @@ class Integrate.Routers.Index extends Backbone.Router
     @$container.html @currentView.render().el
     window.scrollTo(0,1)
 
-  sponsors: ->
-    @currentView = new Integrate.Views.Sponsors(router: this)
+  sponsorsIndex: ->
+    @currentView = new Integrate.Views.Sponsors
+      router: this
+      collection: @sponsors
     @$container.html @currentView.render().el
     window.scrollTo(0,1)
 
