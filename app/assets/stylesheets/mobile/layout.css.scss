@@ -7,6 +7,10 @@ html, body, #container {
   color: $grayDark;
 }
 
+a {
+  color: $grayDark;
+}
+
 .logo {
   background: image-url('mobile/logo.png') no-repeat;
   width: 300px;
@@ -89,4 +93,17 @@ article {
 ul {
   @include no-bullets;
   padding-left: 0;
+
+  &.links {
+    width: 320px;
+    margin: 24px auto 0;
+
+    li {
+      text-align: center;
+      margin-bottom: 8px;
+      &[data-link] {
+        text-decoration: underline;
+      }
+    }
+  }
 }

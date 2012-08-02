@@ -28,3 +28,15 @@
     </li>
   </ul>
 </nav>
+
+<ul class='links'>
+  <li data-link='sponsors'>
+    Sponsors
+  <li>
+  <li>
+    <a href='mailto:integrateartsociety@gmail.com'>Contact Us</a>
+  </li>
+  <li>
+    © Integrate Arts Society
+  </li>
+</ul>
