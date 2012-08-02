@@ -15,6 +15,7 @@ class Integrate.Views.Home extends Backbone.View
     this
 
   selectMenu: ->
+    event.preventDefault()
     $target = $(event.srcElement)
 
     if $target.is('i') or $target.is('span')
@@ -23,7 +24,5 @@ class Integrate.Views.Home extends Backbone.View
       path = $target.data('link')
 
     @navigate path, trigger: true
-
-    event.preventDefault()
 
     this
