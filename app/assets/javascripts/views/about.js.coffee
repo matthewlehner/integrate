@@ -8,5 +8,3 @@ class Integrate.Views.About extends Backbone.View
   render: ->
     $(@el).html @template()
     this
-
-
