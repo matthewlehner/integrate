@@ -1,0 +1,9 @@
+<a href=<%= @url %> >
+  <% if window.devicePixelRatio is 2 : %>
+    <img src=<%= @logo2x['img']%> width=<%= @logo['width'] %> height=<%= @logo['height'] %>>
+
+  <% else: %>
+    <img src=<%= @logo['img']%> width=<%= @logo['width'] %> height=<%= @logo['height'] %>>
+
+  <% end %>
+</a>
