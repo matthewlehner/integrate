@@ -17,6 +17,14 @@ _.extend Integrate,
   Routers: {}
   env: <%= Rails.env.to_json %>
   init: ->
+    if 'ontouchstart' of window
+      $('body').on 'click', (e) ->
+        e.preventDefault()
+
+    else
+      $('body').on 'click', (e) ->
+        $(e.target).trigger('tap')
+
     @app = new Integrate.Routers.Index()
     Backbone.history.start()
 
