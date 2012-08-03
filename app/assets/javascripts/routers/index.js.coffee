@@ -3,21 +3,39 @@ class Integrate.Routers.Index extends Backbone.Router
     @$container = $('#container')
     @initCollections() unless @collectionsCreated?
 
-  initCollections: ->
+  initCollections: =>
     unless @galleries?
       @galleries = new Integrate.Collections.Galleries
-      @galleries.fetch()
 
     unless @offsite?
       @offsites = new Integrate.Collections.Offsites
-      @offsites.fetch()
 
     unless @sponsors?
       @sponsors = new Integrate.Collections.Sponsors
-      @sponsors.fetch()
 
     @collectionsCreated = true
+    @updatedCollection =
+      galleries: false
+      offsites: false
+      sponsors: false
+
+    Backbone.history.on 'route', @fetchCollections()
+    Backbone.history.on 'route', (self, name, args) ->
+      if name is 'map'
+        $('body').off 'click'
+
+      else
+        $('body').on 'click', (e) ->
+          e.preventDefault()
+
     this
+
+  fetchCollections:  ->
+    @sponsors.fetch()
+    @galleries.fetch()
+    @offsites.fetch()
+
+    Backbone.history.off 'route', @fetchCollections
 
   routes:
     ''              : 'index'
@@ -55,7 +73,8 @@ class Integrate.Routers.Index extends Backbone.Router
     @$container.html(@currentView.render().el)
     window.scrollTo(0,1)
     if google?
-      google.maps.event.trigger @mapObject, 'resize'
+      google.maps.event.trigger @currentView.mapObject, 'resize'
+      @currentView.mapObject.fitBounds(@currentView.bounds)
 
   galleryIndex: ->
     @currentView = new Integrate.Views.Galleries
