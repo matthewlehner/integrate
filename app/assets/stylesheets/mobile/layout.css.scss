@@ -101,9 +101,13 @@ ul {
 
     li {
       text-align: center;
-      margin-bottom: 8px;
+      margin-bottom: 14px;
       &[data-link] {
         text-decoration: underline;
+      }
+
+      &.about{
+        color: $grayLight;
       }
     }
   }
