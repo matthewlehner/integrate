@@ -32,11 +32,11 @@
 <ul class='links'>
   <li data-link='sponsors'>
     Sponsors
-  <li>
+  </li>
   <li>
     <a href='mailto:integrateartsociety@gmail.com'>Contact Us</a>
   </li>
-  <li>
+  <li class='about'>
     © Integrate Arts Society
   </li>
 </ul>
