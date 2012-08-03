@@ -7,13 +7,16 @@ html, body, #container {
   color: $grayDark;
 }
 
+h1, h2, h3, h4 {
+  text-rendering: optimizeLegibility;
+}
+
 a {
   color: $grayDark;
 }
 
 .logo {
   background: image-url('mobile/logo.png') no-repeat;
-  @include background-size(300px, 93px);
   width: 300px;
   height: 93px;
   text-indent: 100%;
@@ -22,7 +25,7 @@ a {
   margin: 12px auto 25px;
   border-bottom: none;
 
-  @media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 1.5) {
+  @media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2) {
     background: image-url('mobile/logo2x.png') no-repeat;
     @include background-size(300px, 93px);
   }
