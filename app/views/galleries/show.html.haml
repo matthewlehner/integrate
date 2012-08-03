@@ -11,11 +11,11 @@
 
   .details
     %h2 Exhibition
-    %p= @gallery.exhibition_description
+    = simple_format @gallery.exhibition_description
 
 .info
   %h2 About
-  %p= @gallery.description
+  = simple_format @gallery.description
 
   %h2 Additional Info
   %ul
