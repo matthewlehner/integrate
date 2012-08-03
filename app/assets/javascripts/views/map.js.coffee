@@ -34,13 +34,16 @@ class Integrate.Views.Map extends Backbone.View
       center: new google.maps.LatLng(48.43516805377862, -123.34845250000001)
       mapTypeId: google.maps.MapTypeId.ROADMAP
 
-    @mapObject = new google.maps.Map(@el, myOptions);
+    @mapObject = new google.maps.Map(@el, myOptions)
+    @bounds = new google.maps.LatLngBounds()
 
   addMarkers: ->
     @createMarker site for site in @sites
+    @mapObject.fitBounds(@bounds)
 
   createMarker: (site) ->
     latLng = new google.maps.LatLng(site['latitude'], site['longitude'])
+    @bounds.extend(latLng)
     marker = new google.maps.Marker
       position: latLng
       map: @mapObject
