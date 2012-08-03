@@ -25,6 +25,9 @@ _.extend Integrate,
       $('body').on 'click', (e) ->
         $(e.target).trigger('tap')
 
+    $('a').live 'tap', (e) ->
+      window.location = $(this).attr('href')
+
     @app = new Integrate.Routers.Index()
     Backbone.history.start()
 
