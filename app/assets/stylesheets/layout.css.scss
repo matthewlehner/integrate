@@ -152,6 +152,12 @@ footer {
     ul {
       @include horizontal-list;
 
+      &.social {
+        li {
+          padding: 4px;
+        }
+      }
+
       li + li {
         margin-left: 10px;
       }
