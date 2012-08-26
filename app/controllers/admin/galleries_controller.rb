@@ -1,6 +1,6 @@
-class Admin::GalleriesController < ApplicationController
+class Admin::GalleriesController < AdminController
   def index
-    @galleries = Gallery.scoped
+    @galleries = Gallery.includes(:location)
   end
 
   def new

@@ -1,4 +1,4 @@
-class Admin::OffsitesController < ApplicationController
+class Admin::OffsitesController < AdminController
   def index
     @offsites = Offsite.scoped
   end

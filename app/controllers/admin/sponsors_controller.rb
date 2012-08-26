@@ -1,4 +1,4 @@
-class Admin::SponsorsController < ApplicationController
+class Admin::SponsorsController < AdminController
   def index
     @sponsors = Sponsor.positioned
   end
