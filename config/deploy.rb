@@ -6,6 +6,7 @@ load "config/recipes/unicorn"
 load "config/recipes/postgresql"
 load "config/recipes/dragonfly"
 load "config/recipes/check"
+load 'config/recipes/settings'
 
 server '50.116.9.98', :web, :app, :db, primary: true
 
