@@ -1,4 +1,5 @@
 == Integrate Arts Festival desktop and mobile sites
+{<img src="https://codeclimate.com/github/matthewlehner/integrate.png" />}[https://codeclimate.com/github/matthewlehner/integrate]
 
 Desktop design by Joey MacDonald at Olio Cooperative - http://oliocooperative.ca
 
