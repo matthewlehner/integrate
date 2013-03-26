@@ -18,19 +18,19 @@
 .boxes
   .box
     %h2 About
-    %p Victoria’s 6th annual Integrate Arts Festival (formerly called Off the Grid Art Crawl) will take place August 3rd & 4th with an official art crawl, outdoor visual projections and various other art and music events throughout the festival.
+    %p Victoria’s 7th annual Integrate Arts Festival will take place August 23rd & 24th with an official art crawl, indoor and outdoor performances, street art and opening/closing celebration.
     = link_to 'Read More', about_path
 
   .box
     %h2 Map
-    %p #{pluralize @galleries.count, 'galleries'}, #{pluralize @offsites.count, 'offsite events'} & extra perks on this handy map.
+    %p Use this map to discover amazing arts destinations in Victoria, BC.
     = link_to 'View Map', map_index_path
     -# |
     -# = link_to 'PDF', '#'
 
   .box
     %h2 Events
-    %p In addition to gallery events this year Integrate will feature large-scale outdoor projections at various downtown sites, Audio Visual Experience III and a multimedia showcase.
+    %p In addition to a city-wide art crawl, the Integrate Arts Festival will include lively opening and closing celebrations.
     -#= link_to 'Read More', about_path #FIXME - gotta get this going!
 
 :javascript
