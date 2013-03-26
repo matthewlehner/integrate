@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 
     def authenticate
       login = authenticate_or_request_with_http_basic do |username, password|
-        username == PREFERENCES_CONFIG['username'] && password == PREFERENCES_CONFIG['password']
+        username == ENV['username'] && password == ENV['password']
       end
       session[:login] = login
     end
