@@ -16,6 +16,7 @@ end
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'jbuilder'
+gem 'rb-readline'
 
 # Use unicorn as the app server
 gem 'unicorn'
